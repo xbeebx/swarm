@@ -1,0 +1,17 @@
+<div class="navbar__container">
+  <div
+    class="navbar__container__wrapper"
+    *ngFor="let item of navigationService.getItems()"
+    (click)="this.navigate(item.link)"
+    [class.selected]="this.isSelected(item.link)"
+  >
+    <div class="navbar__container__wrapper__item">
+      <img [src]="item.icon" [class.selected]="this.isSelected(item.link)" />
+      <span [class.selected]="this.isSelected(item.link)">{{ item.name }}</span>
+    </div>
+    <div
+      *ngIf="this.isSelected(item.link)"
+      class="navbar__container__wrapper__selectedIndicator"
+    ></div>
+  </div>
+</div>

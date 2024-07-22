@@ -1,0 +1,67 @@
+<div class="tierlist">
+  <!-- champion tier list -->
+  <!-- header -->
+  <div class="tierlist__header">
+    <i class="ri-team-fill"></i>
+    <span class="tierlist__header__text">Champion tier list</span>
+  </div>
+  <!-- description -->
+  <p>
+    Strongest champions based on unique weapon, damage, and solo-play
+    potential.<br />
+    <strong>For new players: </strong><a href="/briar">Briar</a>,
+    <a href="/leona">Leona</a>, and <a href="/jinx">Jinx</a> are very strong
+    early on.
+  </p>
+  <div class="tierlist__container" *ngFor="let tier of tierService.getTiers()">
+    <div
+      class="tierlist__container__label"
+      [ngStyle]="{ '--tiercolor': tier.color }"
+    >
+      {{ tier.name }}
+    </div>
+    <div class="tierlist__container__content">
+      <!-- champions -->
+      <div
+        class="tierlist__container__content__item"
+        *ngFor="let champ of championService.getChampionsByTier(tier.name)"
+      >
+        <a [href]="navigationService.getItemByName(champ.name).link">
+          <img [src]="champ.icon" [ngStyle]="{ '--tiercolor': tier.color }" />
+          <span>{{ champ.name }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- spacer -->
+  <div class="spacer"></div>
+
+  <!-- weapons tier list -->
+  <!-- header -->
+  <div class="tierlist__header">
+    <i class="ri-sword-fill"></i>
+    <span class="tierlist__header__text">Weapons tier list</span>
+  </div>
+  <!-- description -->
+  <p>Strongest swarm weapons across all champions and playstyles.</p>
+  <div class="tierlist__container" *ngFor="let tier of tierService.getTiers()">
+    <div
+      class="tierlist__container__label"
+      [ngStyle]="{ '--tiercolor': tier.color }"
+    >
+      {{ tier.name }}
+    </div>
+    <div class="tierlist__container__content">
+      <!-- champions -->
+      <div
+        class="tierlist__container__content__item"
+        *ngFor="let weapon of weaponsService.getWeaponsByTier(tier.name)"
+      >
+        <a [href]="'/' + weapon.name.toLowerCase()">
+          <img [src]="weapon.icon" [ngStyle]="{ '--tiercolor': tier.color }" />
+          <span>{{ weapon.name }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

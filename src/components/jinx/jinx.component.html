@@ -1,0 +1,72 @@
+<div class="jinx">
+  <!-- jinx builds -->
+  <!-- header -->
+  <div class="jinx__header">
+    <img [src]="jinx.icon" />
+    <span class="jinx__header__text">Jinx Builds</span>
+  </div>
+  <!-- description -->
+  <p>
+    <strong>Jinx objectives: </strong>Reach level 25 with Jinx to unlock the
+    <span class="item_with_image">
+      <img [src]="vortexGlove.icon" /><a class="jinx_item_name">Vortex Glove</a>
+    </span>
+    weapon.
+  </p>
+
+  <!-- subheader -->
+  <div class="jinx__subheader">
+    <img src="assets/augment.png" />
+    <span class="jinx__subheader__text">Recommended augments for Jinx</span>
+  </div>
+
+  <!-- itembuilds -->
+  <div class="jinx__itembuild" *ngFor="let itemBuild of itemBuilds">
+    <!-- name and desc on left side -->
+    <div class="jinx__itembuild__left">
+      <div class="jinx__itembuild__left__name">{{ itemBuild.name }}</div>
+      <div class="jinx__itembuild__left__desc">{{ itemBuild.desc }}</div>
+    </div>
+
+    <!-- abilities and weapons on right side -->
+    <div class="jinx__itembuild__right">
+      <div class="jinx__itembuild__right__area">
+        <div class="jinx__itembuild__right__area__title">Abilities</div>
+        <div class="jinx__itembuild__right__area__content">
+          <!-- abilities -->
+          <div
+            class="jinx__itembuild__right__area__content__item"
+            *ngFor="let ability of itemBuild.abilities"
+          >
+            <img
+              class="jinx__itembuild__right__area__content__item__image"
+              [src]="ability.icon"
+            />
+            <p class="jinx__itembuild__right__area__content__item__item-text">
+              {{ ability.type }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="jinx__itembuild__right__area">
+        <div class="jinx__itembuild__right__area__title">Weapons</div>
+        <div class="jinx__itembuild__right__area__content">
+          <!-- weapons -->
+          <div
+            class="jinx__itembuild__right__area__content__item"
+            *ngFor="let weapon of itemBuild.weapons"
+          >
+            <img
+              class="jinx__itembuild__right__area__content__item__image"
+              [src]="weapon.iconEvolve"
+            />
+            <p class="jinx__itembuild__right__area__content__item__item-text">
+              {{ weapon.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
