@@ -43,6 +43,7 @@ export class WeaponService {
     {
       name: ICE_BLAST_ARMOR,
       icon: WEAPON_ASSETS_FOLDER + 'ice_blast_armor.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'ice_blast_armor_evolve.png',
       tier: TIER_S,
     },
     {
@@ -77,11 +78,13 @@ export class WeaponService {
     {
       name: RADIANT_FIELD,
       icon: WEAPON_ASSETS_FOLDER + 'radiant_field.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'radiant_field_evolve.png',
       tier: TIER_A,
     },
     {
       name: VORTEX_GLOVE,
       icon: WEAPON_ASSETS_FOLDER + 'vortex_glove.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'vortex_glove_evolve.png',
       tier: TIER_A,
     },
     {
@@ -107,16 +110,19 @@ export class WeaponService {
     {
       name: SEARING_SHORTBOW,
       icon: WEAPON_ASSETS_FOLDER + 'searing_shortbow.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'searing_shortbow_evolve.png',
       tier: TIER_A,
     },
     {
       name: BLADE_O_RANG,
       icon: WEAPON_ASSETS_FOLDER + 'blade_o_rang.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'blade_o_rang_evolve.png',
       tier: TIER_A,
     },
     {
       name: GATLING_BUNNY_GUNS,
       icon: WEAPON_ASSETS_FOLDER + 'gatling_bunny_guns.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'gatling_bunny_guns_evolve.png',
       tier: TIER_A,
     },
     { name: TIBBERS, icon: WEAPON_ASSETS_FOLDER + 'tibbers.png', tier: TIER_B },
@@ -133,6 +139,7 @@ export class WeaponService {
     {
       name: YUUMIBOT,
       icon: WEAPON_ASSETS_FOLDER + 'yuumi_bot.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'yuumi_bot_evolve.png',
       tier: TIER_B,
     },
     {

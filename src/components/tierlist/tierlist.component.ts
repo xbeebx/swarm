@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { TierService } from '../../tier/tier.service';
 import { NgFor, NgStyle } from '@angular/common';
 import { ChampionService } from '../../champion/champion.service';
-import { WeaponService } from '../../weapons/weapon.service';
+import { WeaponService } from '../../weapon/weapon.service';
 import { NavigationService } from '../navbar/navbar.service';
 
 @Component({

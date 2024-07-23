@@ -1,54 +1,25 @@
-.tierlist {
-  display: flex;
-  flex-direction: column;
-  margin: 40px auto;
-  max-width: 1030px;
+.tierlist-desc {
+  color: #bbbedb;
+  line-height: 32px;
+  font-size: 18px;
+  margin: 0px;
 
-  &__header {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    gap: 9px;
-
-    i {
-      font-size: 30px;
-      color: #3273fa;
-    }
-
-    &__image {
-      height: 30px;
-      width: 30px;
-    }
-
-    &__text {
-      font-size: 30px;
-      font-weight: 900;
-      line-height: 50px;
-    }
-  }
-  
-  p {
-    color: #bbbedb;
-    line-height: 32px;
-    font-size: 18px;
-    margin-bottom: 18px;
-
-    a {
-      color: #3273fa;
-      text-decoration: none;
-    }
+  a {
+    color: #3273fa;
+    text-decoration: none;
   }
 
   strong {
-    color: #fff
+    color: #fff;
   }
+}
 
+.tierlist {
   &__container {
     display: flex;
     background-color: #191937;
     flex-grow: 1;
     border-radius: 6px;
-    margin-bottom: 12px;
 
     &__label {
       --tiercolor: #fff;
@@ -63,7 +34,6 @@
       line-height: 24px;
       width: 30px;
       min-width: 30px;
-
     }
 
     &__content {
@@ -87,7 +57,8 @@
           text-decoration: none;
           color: #cddcfe;
 
-          &:hover {
+          // hover only item when href exists
+          &:hover[href] {
             color: #3273fa;
           }
         }
