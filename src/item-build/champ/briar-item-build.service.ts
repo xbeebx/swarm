@@ -4,7 +4,7 @@ import { AbilityService } from '../../ability/ability.service';
 import {
   AREA_SIZE,
   ARMOR,
-  CRIT_CHANCE,
+  CRITICAL_CHANCE,
   DAMAGE,
   EXPERIENCE,
   HASTE,
@@ -87,7 +87,7 @@ export class BriarItemBuildService {
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(CRIT_CHANCE),
+        this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(HASTE),
       ],
     },

@@ -1,12 +1,11 @@
-import { Component, inject } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
-import { ChampionService } from '../../champion/champion.service';
 import { NavigationService } from './navbar.service';
 
 @Component({
-  selector: 'navbar',
+  selector: 'swarm-navbar',
   standalone: true,
   imports: [RouterOutlet, NgFor, NgIf],
   templateUrl: './navbar.component.html',
@@ -22,5 +21,15 @@ export class NavbarComponent {
 
   isSelected = (link: string) => {
     return this.#router.url.startsWith(link);
+  };
+
+  onKeyUp = (event: KeyboardEvent, link: string) => {
+    if (
+      event.code === 'Space' ||
+      event.code === 'Enter' ||
+      event.code === 'NumpadEnter'
+    ) {
+      this.#router.navigate([link]);
+    }
   };
 }

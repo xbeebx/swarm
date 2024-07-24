@@ -7,7 +7,7 @@ import { WeaponService } from '../../weapon/weapon.service';
 import { NavigationService } from '../navbar/navbar.service';
 
 @Component({
-  selector: 'tierlist',
+  selector: 'swarm-tierlist',
   standalone: true,
   imports: [RouterOutlet, NgFor, NgStyle],
   templateUrl: './tierlist.component.html',

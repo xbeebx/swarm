@@ -1,7 +1,7 @@
 <div class="article">
   <!-- header -->
   <div class="header">
-    <img class="header__image" src="assets/tierlist.png" />
+    <img class="header__image" src="assets/tierlist.png" alt="Tier list" />
     <span class="header__text">Tier list</span>
   </div>
 
@@ -40,7 +40,11 @@
           *ngFor="let champ of championService.getChampionsByTier(tier.name)"
         >
           <a [href]="navigationService.getItemByName(champ.name).link">
-            <img [src]="champ.icon" [ngStyle]="{ '--tiercolor': tier.color }" />
+            <img
+              [src]="champ.icon"
+              [alt]="champ.name"
+              [ngStyle]="{ '--tiercolor': tier.color }"
+            />
             <span>{{ champ.name }}</span>
           </a>
         </div>
@@ -80,6 +84,7 @@
           <a>
             <img
               [src]="weapon.icon"
+              [alt]="weapon.name"
               [ngStyle]="{ '--tiercolor': tier.color }"
             />
             <span>{{ weapon.name }}</span>

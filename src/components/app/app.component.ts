@@ -5,12 +5,10 @@ import 'remixicon/fonts/remixicon.css';
 import '@fontsource/inter';
 
 @Component({
-  selector: 'app-root',
+  selector: 'swarm-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'swarm';
-}
+export class AppComponent {}

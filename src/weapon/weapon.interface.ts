@@ -29,6 +29,7 @@ export const YUUMIBOT = 'YuumiBot';
 export const FINAL_CITY_TRANSIT = 'Final City Transit';
 export const JINX_WEAPON = 'Jinx Weapon';
 export const BRIAR_WEAPON = 'Briar Weapon';
+export const SERAPHINE_WEAPON = 'Seraphine Weapon';
 
 export const WEAPONS = [
   ICE_BLAST_ARMOR,
@@ -53,6 +54,7 @@ export const WEAPONS = [
   FINAL_CITY_TRANSIT,
   JINX_WEAPON,
   BRIAR_WEAPON,
+  SERAPHINE_WEAPON,
 ] as const;
 
 export type WeaponTypes = (typeof WEAPONS)[number];

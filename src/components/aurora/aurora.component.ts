@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'aurora',
+  selector: 'swarm-aurora',
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './aurora.component.html',
-  styleUrl: './aurora.component.scss'
+  styleUrl: './aurora.component.scss',
 })
-export class AuroraComponent {
-}
+export class AuroraComponent {}

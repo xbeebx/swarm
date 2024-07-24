@@ -1,16 +1,14 @@
+import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BRIAR, JINX, LEONA } from '../../champion/champion.interface';
 import { ChampionService } from '../../champion/champion.service';
 import { ItemBuildService } from '../../item-build/item-build.service';
-import { AugmentService } from '../../augment/augment.service';
-import { WeaponService } from '../../weapon/weapon.service';
-import { BRIAR, JINX, LEONA } from '../../champion/champion.interface';
-import { Augment } from '../../augment/augment.interface';
-import { NgFor } from '@angular/common';
 import { ANTI_SHAK_SEA_MINE } from '../../weapon/weapon.interface';
+import { WeaponService } from '../../weapon/weapon.service';
 
 @Component({
-  selector: 'briar',
+  selector: 'swarm-briar',
   standalone: true,
   imports: [RouterOutlet, NgFor],
   templateUrl: './briar.component.html',

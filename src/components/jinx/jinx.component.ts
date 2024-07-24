@@ -14,7 +14,7 @@ import {
 } from '../../augment/augment.interface';
 
 @Component({
-  selector: 'jinx',
+  selector: 'swarm-jinx',
   standalone: true,
   imports: [RouterOutlet, NgFor],
   templateUrl: './jinx.component.html',

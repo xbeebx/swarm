@@ -78,6 +78,21 @@ body {
   }
 }
 
+.upgrade_with_image_round {
+  display: flex;
+
+  img {
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+  }
+
+  a {
+    color: #36bda8;
+    text-decoration: none;
+  }
+}
+
 .box {
   display: flex;
   flex-direction: row;

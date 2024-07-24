@@ -9,6 +9,7 @@ import { provideAbilities } from './ability';
 import { provideItemBuilds } from './item-build';
 import { provideAugments } from './augment';
 import { provideAttributes } from './attribute';
+import { provideUpgrades } from './upgrades';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,5 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideItemBuilds(),
     provideAugments(),
     provideAttributes(),
+    provideUpgrades(),
   ],
 };

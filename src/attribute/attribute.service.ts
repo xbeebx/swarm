@@ -4,7 +4,7 @@ import {
   ARMOR,
   Attribute,
   AttributeTypes,
-  CRIT_CHANCE,
+  CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
   EXPERIENCE,
@@ -28,7 +28,7 @@ export class AttributeService {
       icon: ATTRIBUTE_ASSETS_FOLDER + 'haste.png',
     },
     {
-      name: CRIT_CHANCE,
+      name: CRITICAL_CHANCE,
       icon: ATTRIBUTE_ASSETS_FOLDER + 'crit_chance.png',
     },
     {

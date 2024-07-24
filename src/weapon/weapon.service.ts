@@ -24,6 +24,7 @@ import {
   PAW_PRINT_POISONER,
   RADIANT_FIELD,
   SEARING_SHORTBOW,
+  SERAPHINE_WEAPON,
   STATIKK_SWORD,
   THE_ANNIHILATOR,
   TIBBERS,
@@ -163,6 +164,11 @@ export class WeaponService {
       name: BRIAR_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'briar_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'briar_weapon_evolve.png',
+    },
+    {
+      name: SERAPHINE_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'seraphine_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'seraphine_weapon_evolve.png',
     },
   ];
 

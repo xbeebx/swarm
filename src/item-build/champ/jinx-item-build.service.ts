@@ -22,7 +22,7 @@ import { JINX_ABILITY, JINX_ULTIMATE } from '../../ability/ability.interface';
 import {
   AREA_SIZE,
   ARMOR,
-  CRIT_CHANCE,
+  CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
   HASTE,
@@ -59,7 +59,7 @@ export class JinxItemBuildService {
       ],
       attributes: [
         this.#attributeService.getAttributeByName(HASTE),
-        this.#attributeService.getAttributeByName(CRIT_CHANCE),
+        this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
@@ -111,7 +111,7 @@ export class JinxItemBuildService {
         this.#attributeService.getAttributeByName(PICKUP_RADIUS),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
-        this.#attributeService.getAttributeByName(CRIT_CHANCE),
+        this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
       ],
     },
     {
@@ -135,7 +135,7 @@ export class JinxItemBuildService {
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(CRIT_CHANCE),
+        this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
       ],
     },
   ];

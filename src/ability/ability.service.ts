@@ -7,6 +7,8 @@ import {
   BRIAR_ULTIMATE,
   JINX_ABILITY,
   JINX_ULTIMATE,
+  SERAPHINE_ABILITY,
+  SERAPHINE_ULTIMATE,
 } from './ability.interface';
 
 const ABILITY_ASSETS_FOLDER = 'assets/abilities/';
@@ -34,6 +36,16 @@ export class AbilityService {
     {
       name: BRIAR_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'briar_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: SERAPHINE_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'seraphine_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: SERAPHINE_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'seraphine_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

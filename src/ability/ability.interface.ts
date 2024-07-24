@@ -8,12 +8,16 @@ export const JINX_ABILITY = 'Jinx Ability';
 export const JINX_ULTIMATE = 'Jinx Ultimate';
 export const BRIAR_ABILITY = 'Briar Ability';
 export const BRIAR_ULTIMATE = 'Briar Ultimate';
+export const SERAPHINE_ABILITY = 'Seraphine Ability';
+export const SERAPHINE_ULTIMATE = 'Seraphine Ultimate';
 
 export const ABILITIES = [
   JINX_ABILITY,
   JINX_ULTIMATE,
   BRIAR_ABILITY,
   BRIAR_ULTIMATE,
+  SERAPHINE_ABILITY,
+  SERAPHINE_ULTIMATE,
 ] as const;
 
 export type AbilityTypes = (typeof ABILITIES)[number];

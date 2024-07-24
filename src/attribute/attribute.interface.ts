@@ -4,7 +4,7 @@ export interface Attribute {
 }
 
 export const HASTE = 'Haste';
-export const CRIT_CHANCE = 'Crit Chance';
+export const CRITICAL_CHANCE = 'Critical Chance';
 export const DAMAGE = 'Damage';
 export const AREA_SIZE = 'Area Size';
 export const MAX_HEALTH = 'Max Health';
@@ -18,7 +18,7 @@ export const EXPERIENCE = 'Experience';
 
 export const ATTRIBUTES = [
   HASTE,
-  CRIT_CHANCE,
+  CRITICAL_CHANCE,
   DAMAGE,
   AREA_SIZE,
   MAX_HEALTH,

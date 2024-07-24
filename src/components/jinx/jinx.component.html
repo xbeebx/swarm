@@ -1,7 +1,7 @@
 <div class="article">
   <!-- header -->
   <div class="header">
-    <img class="header__image" [src]="champ.icon" />
+    <img class="header__image" [src]="champ.icon" [alt]="champ.name" />
     <span class="header__text">Jinx</span>
   </div>
 
@@ -16,7 +16,9 @@
       <p>
         Reach level 25 with Jinx to unlock the
         <span class="item_with_image_round">
-          <img [src]="vortexGlove.icon" /><a>{{ vortexGlove.name }}</a>
+          <img [src]="vortexGlove.icon" [alt]="vortexGlove.name" /><a>{{
+            vortexGlove.name
+          }}</a>
         </span>
         weapon.
       </p>
@@ -31,7 +33,7 @@
 
   <div class="container-wrapper-vertical">
     <div class="box augment" *ngFor="let augment of augments">
-      <img class="augment__icon" [src]="augment.icon" />
+      <img class="augment__icon" [src]="augment.icon" [alt]="augment.name" />
       <div class="augment__container">
         <div class="augment__container__name">
           {{ augment.name }}
@@ -74,6 +76,7 @@
                 <img
                   class="itembuild__top__right__area__content__item__image"
                   [src]="ability.icon"
+                  [alt]="ability.name"
                 />
                 <p
                   class="itembuild__top__right__area__content__item__item-text"
@@ -95,6 +98,7 @@
                 <img
                   class="itembuild__top__right__area__content__item__image"
                   [src]="weapon.iconEvolve"
+                  [alt]="weapon.name"
                 />
                 <p
                   class="itembuild__top__right__area__content__item__item-text"
@@ -114,7 +118,7 @@
               class="itembuild__bottom__content__attributes__attribute"
               *ngFor="let attribute of itemBuild.attributes"
             >
-              <img [src]="attribute.icon" />
+              <img [src]="attribute.icon" [alt]="attribute.name" />
               <div
                 class="itembuild__bottom__content__attributes__attribute__name"
               >

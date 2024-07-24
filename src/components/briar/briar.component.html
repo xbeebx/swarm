@@ -1,7 +1,7 @@
 <div class="article">
   <!-- header -->
   <div class="header">
-    <img class="header__image" [src]="champ.icon" />
+    <img class="header__image" [src]="champ.icon" [alt]="champ.name" />
     <span class="header__text">Briar</span>
   </div>
 
@@ -31,9 +31,13 @@
       <p>
         Defeat Briar on The Outskirts map (2nd map).
         <span class="item_with_image_round">
-          <img [src]="jinx.icon" /><a href="/jinx">{{ jinx.name }}</a> </span
+          <img [src]="jinx.icon" [alt]="jinx.name" /><a href="/jinx">{{
+            jinx.name
+          }}</a> </span
         >and<span class="item_with_image_round">
-          <img [src]="leona.icon" /><a href="/leona">{{ leona.name }}</a> </span
+          <img [src]="leona.icon" [alt]="leona.name" /><a href="/leona">{{
+            leona.name
+          }}</a> </span
         >are both strong on this map.
       </p>
     </div>
@@ -50,9 +54,10 @@
       <p>
         Reach level 30 with Briar to unlock the
         <span class="item_with_image_round">
-          <img [src]="antiSharkSeaMine.icon" /><a>{{
-            antiSharkSeaMine.name
-          }}</a>
+          <img
+            [src]="antiSharkSeaMine.icon"
+            [alt]="antiSharkSeaMine.name"
+          /><a>{{ antiSharkSeaMine.name }}</a>
         </span>
         weapon.
       </p>
@@ -92,6 +97,7 @@
                 <img
                   class="itembuild__top__right__area__content__item__image"
                   [src]="ability.icon"
+                  [alt]="ability.name"
                 />
                 <p
                   class="itembuild__top__right__area__content__item__item-text"
@@ -113,6 +119,7 @@
                 <img
                   class="itembuild__top__right__area__content__item__image"
                   [src]="weapon.iconEvolve"
+                  [alt]="weapon.name"
                 />
                 <p
                   class="itembuild__top__right__area__content__item__item-text"
@@ -132,7 +139,7 @@
               class="itembuild__bottom__content__attributes__attribute"
               *ngFor="let attribute of itemBuild.attributes"
             >
-              <img [src]="attribute.icon" />
+              <img [src]="attribute.icon" [alt]="attribute.name" />
               <div
                 class="itembuild__bottom__content__attributes__attribute__name"
               >

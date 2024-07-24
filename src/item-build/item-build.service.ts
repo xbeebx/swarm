@@ -1,9 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { ItemBuild } from './item-build.interface';
-import { ChampionTypes, JINX } from '../champion/champion.interface';
-import { WeaponService } from '../weapon/weapon.service';
-import { JinxItemBuildService } from './champ/jinx-item-build.service';
+import { ChampionTypes } from '../champion/champion.interface';
 import { BriarItemBuildService } from './champ/briar-item-build.service';
+import { JinxItemBuildService } from './champ/jinx-item-build.service';
+import { ItemBuild } from './item-build.interface';
+import { SeraphineItemBuildService } from './champ/seraphine-item-build.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +11,15 @@ import { BriarItemBuildService } from './champ/briar-item-build.service';
 export class ItemBuildService {
   #jinxItemBuildService = inject(JinxItemBuildService);
   #briarItemBuildService = inject(BriarItemBuildService);
+  #seraphineItemBuildService = inject(SeraphineItemBuildService);
 
   #itemBuilds: ItemBuild[] = [];
 
   constructor() {
     this.#itemBuilds = this.#itemBuilds.concat(
       this.#jinxItemBuildService.getItemBuilds(),
-      this.#briarItemBuildService.getItemBuilds()
+      this.#briarItemBuildService.getItemBuilds(),
+      this.#seraphineItemBuildService.getItemBuilds()
     );
   }
 

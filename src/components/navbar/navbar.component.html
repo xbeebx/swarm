@@ -4,9 +4,16 @@
     *ngFor="let item of navigationService.getItems()"
     (click)="this.navigate(item.link)"
     [class.selected]="this.isSelected(item.link)"
+    tabindex="0"
+    role="button"
+    (keyup)="onKeyUp($event, item.link)"
   >
     <div class="navbar__container__wrapper__item">
-      <img [src]="item.icon" [class.selected]="this.isSelected(item.link)" />
+      <img
+        [src]="item.icon"
+        [alt]="item.name"
+        [class.selected]="this.isSelected(item.link)"
+      />
       <span [class.selected]="this.isSelected(item.link)">{{ item.name }}</span>
     </div>
     <div
