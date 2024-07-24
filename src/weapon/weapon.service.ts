@@ -19,6 +19,7 @@ import {
   FINAL_CITY_TRANSIT,
   GATLING_BUNNY_GUNS,
   ICE_BLAST_ARMOR,
+  ILLAOI_WEAPON,
   JINX_WEAPON,
   LIONESSS_LAMENT,
   PAW_PRINT_POISONER,
@@ -169,6 +170,11 @@ export class WeaponService {
       name: SERAPHINE_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'seraphine_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'seraphine_weapon_evolve.png',
+    },
+    {
+      name: ILLAOI_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'illaoi_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'illaoi_weapon_evolve.png',
     },
   ];
 

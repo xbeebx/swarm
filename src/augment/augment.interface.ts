@@ -6,7 +6,16 @@ export interface Augment {
 
 export const RAMMING_RUNNER = 'Ramming Runner';
 export const CROSS_COUNTRY = 'Cross Country';
+export const ULTIMATE_SPEED_UP = 'Ultimate Speed Up';
+export const UPTIME_UPGRADE = 'Uptime Upgrade';
+export const CARD_COLLECTOR = 'Card Collector';
 
-export const AUGMENTS = [RAMMING_RUNNER, CROSS_COUNTRY] as const;
+export const AUGMENTS = [
+  RAMMING_RUNNER,
+  CROSS_COUNTRY,
+  ULTIMATE_SPEED_UP,
+  UPTIME_UPGRADE,
+  CARD_COLLECTOR,
+] as const;
 
 export type AugmentTypes = (typeof AUGMENTS)[number];

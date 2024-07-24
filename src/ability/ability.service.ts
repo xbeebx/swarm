@@ -5,6 +5,8 @@ import {
   ABILITY_TYPE_ULTIMATE,
   BRIAR_ABILITY,
   BRIAR_ULTIMATE,
+  ILLAOI_ABILITY,
+  ILLAOI_ULTIMATE,
   JINX_ABILITY,
   JINX_ULTIMATE,
   SERAPHINE_ABILITY,
@@ -46,6 +48,16 @@ export class AbilityService {
     {
       name: SERAPHINE_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'seraphine_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: ILLAOI_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'illaoi_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: ILLAOI_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'illaoi_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];
