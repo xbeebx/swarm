@@ -1,1 +1,147 @@
-<div>Briar under construction!</div>
+<div class="article">
+  <!-- header -->
+  <div class="header">
+    <img class="header__image" [src]="champ.icon" />
+    <span class="header__text">Briar</span>
+  </div>
+
+  <!-- tip -->
+  <div class="subheader">
+    <i class="subheader__image ri-lightbulb-fill"></i>
+    <span class="subheader__text">Tip</span>
+  </div>
+
+  <div class="container-wrapper-vertical">
+    <div class="box objective">
+      <p>
+        You can use Briar's Ult to fly anywhere across the map. Place your
+        cursor where you want to go on your mini-map as you use Briar's ult.
+      </p>
+    </div>
+  </div>
+
+  <!-- how to unlock briar -->
+  <div class="subheader">
+    <i class="subheader__image ri-key-fill"></i>
+    <span class="subheader__text">How to unlock briar</span>
+  </div>
+
+  <div class="container-wrapper-vertical">
+    <div class="box objective">
+      <p>
+        Defeat Briar on The Outskirts map (2nd map).
+        <span class="item_with_image_round">
+          <img [src]="jinx.icon" /><a href="/jinx">{{ jinx.name }}</a> </span
+        >and<span class="item_with_image_round">
+          <img [src]="leona.icon" /><a href="/leona">{{ leona.name }}</a> </span
+        >are both strong on this map.
+      </p>
+    </div>
+  </div>
+
+  <!-- objectives -->
+  <div class="subheader">
+    <i class="subheader__image ri-lock-unlock-fill"></i>
+    <span class="subheader__text">Objectives</span>
+  </div>
+
+  <div class="container-wrapper-vertical">
+    <div class="box objective">
+      <p>
+        Reach level 30 with Briar to unlock the
+        <span class="item_with_image_round">
+          <img [src]="antiSharkSeaMine.icon" /><a>{{
+            antiSharkSeaMine.name
+          }}</a>
+        </span>
+        weapon.
+      </p>
+    </div>
+  </div>
+
+  <!-- subheader -->
+  <div class="subheader">
+    <i class="subheader__image ri-book-shelf-fill"></i>
+    <span class="subheader__text">Builds</span>
+  </div>
+
+  <!-- itembuilds -->
+  <div class="container-wrapper-vertical">
+    <div class="itembuild" *ngFor="let itemBuild of itemBuilds">
+      <div class="itembuild__top">
+        <!-- name and desc on left side -->
+        <div class="itembuild__top__left">
+          <div class="itembuild__top__left__name">
+            {{ itemBuild.name }}
+          </div>
+          <div class="itembuild__top__left__desc">
+            {{ itemBuild.desc }}
+          </div>
+        </div>
+
+        <!-- abilities and weapons on right side -->
+        <div class="itembuild__top__right">
+          <div class="itembuild__top__right__area">
+            <div class="itembuild__top__right__area__title">Abilities</div>
+            <div class="itembuild__top__right__area__content">
+              <!-- abilities -->
+              <div
+                class="itembuild__top__right__area__content__item"
+                *ngFor="let ability of itemBuild.abilities"
+              >
+                <img
+                  class="itembuild__top__right__area__content__item__image"
+                  [src]="ability.icon"
+                />
+                <p
+                  class="itembuild__top__right__area__content__item__item-text"
+                >
+                  {{ ability.type }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="itembuild__top__right__area">
+            <div class="itembuild__top__right__area__title">Weapons</div>
+            <div class="itembuild__top__right__area__content">
+              <!-- weapons -->
+              <div
+                class="itembuild__top__right__area__content__item"
+                *ngFor="let weapon of itemBuild.weapons"
+              >
+                <img
+                  class="itembuild__top__right__area__content__item__image"
+                  [src]="weapon.iconEvolve"
+                />
+                <p
+                  class="itembuild__top__right__area__content__item__item-text"
+                >
+                  {{ weapon.name }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="itembuild__bottom">
+        <div class="itembuild__bottom__title">Attributes</div>
+        <div class="itembuild__bottom__content">
+          <div class="itembuild__bottom__content__attributes">
+            <div
+              class="itembuild__bottom__content__attributes__attribute"
+              *ngFor="let attribute of itemBuild.attributes"
+            >
+              <img [src]="attribute.icon" />
+              <div
+                class="itembuild__bottom__content__attributes__attribute__name"
+              >
+                {{ attribute.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

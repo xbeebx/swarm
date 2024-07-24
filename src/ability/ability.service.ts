@@ -3,6 +3,10 @@ import {
   Ability,
   ABILITY_TYPE_NORMAL,
   ABILITY_TYPE_ULTIMATE,
+  BRIAR_ABILITY,
+  BRIAR_ULTIMATE,
+  JINX_ABILITY,
+  JINX_ULTIMATE,
 } from './ability.interface';
 
 const ABILITY_ASSETS_FOLDER = 'assets/abilities/';
@@ -13,13 +17,23 @@ const ABILITY_ASSETS_FOLDER = 'assets/abilities/';
 export class AbilityService {
   #abilities: Ability[] = [
     {
-      name: 'Jinx Ability',
+      name: JINX_ABILITY,
       icon: ABILITY_ASSETS_FOLDER + 'jinx_ability.png',
       type: ABILITY_TYPE_NORMAL,
     },
     {
-      name: 'Jinx Ultimate',
+      name: JINX_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'jinx_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: BRIAR_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'briar_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: BRIAR_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'briar_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

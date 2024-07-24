@@ -7,6 +7,7 @@ import {
   CRIT_CHANCE,
   DAMAGE,
   DURATION,
+  EXPERIENCE,
   HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
@@ -65,6 +66,10 @@ export class AttributeService {
     {
       name: ARMOR,
       icon: ATTRIBUTE_ASSETS_FOLDER + 'armor.png',
+    },
+    {
+      name: EXPERIENCE,
+      icon: ATTRIBUTE_ASSETS_FOLDER + 'experience.png',
     },
   ];
 

@@ -48,20 +48,18 @@
   background-color: #191937;
   flex-grow: 1;
   border-radius: 6px;
-  padding: 12px;
+  padding: 24px;
   gap: 8px;
 
   &__top {
     display: flex;
     flex-direction: row;
-    margin-right: 60px;
     flex-wrap: wrap;
 
     &__left {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 12px;
       gap: 12px;
 
       &__name {

@@ -27,7 +27,7 @@ export class JinxComponent {
   #augmentService = inject(AugmentService);
   weaponService = inject(WeaponService);
 
-  jinx = this.#championService.getChampionByName(JINX);
+  champ = this.#championService.getChampionByName(JINX);
   itemBuilds = this.#itemBuildService.getItemBuildsByChampion(JINX);
   vortexGlove = this.weaponService.getWeaponByName(VORTEX_GLOVE);
 

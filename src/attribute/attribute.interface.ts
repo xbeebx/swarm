@@ -14,6 +14,7 @@ export const MOVEMENT_SPEED = 'Movement Speed';
 export const HEALTH_REGENERATION = 'Health Regeneration';
 export const PICKUP_RADIUS = 'Pickup Radius';
 export const ARMOR = 'Armor';
+export const EXPERIENCE = 'Experience';
 
 export const ATTRIBUTES = [
   HASTE,
@@ -27,6 +28,7 @@ export const ATTRIBUTES = [
   HEALTH_REGENERATION,
   PICKUP_RADIUS,
   ARMOR,
+  EXPERIENCE,
 ] as const;
 
 export type AttributeTypes = (typeof ATTRIBUTES)[number];

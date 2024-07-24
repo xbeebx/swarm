@@ -12,6 +12,7 @@ import {
   ANTI_SHAK_SEA_MINE as ANTI_SHARK_SEA_MINE,
   BATTLE_BUNNY_CROWBOW,
   BLADE_O_RANG,
+  BRIAR_WEAPON,
   BUNNY_MEGA_BLAST,
   CYCLONIC_SLICERS,
   ECHOING_BATHBLADES as ECHOING_BATBLADES,
@@ -61,6 +62,7 @@ export class WeaponService {
     {
       name: THE_ANNIHILATOR,
       icon: WEAPON_ASSETS_FOLDER + 'the_annihilator.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'the_annihilator_evolve.png',
       tier: TIER_S,
     },
     {
@@ -95,16 +97,19 @@ export class WeaponService {
     {
       name: ANTI_SHARK_SEA_MINE,
       icon: WEAPON_ASSETS_FOLDER + 'anti_shark_sea_mine.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'anti_shark_sea_mine_evolve.png',
       tier: TIER_A,
     },
     {
       name: CYCLONIC_SLICERS,
       icon: WEAPON_ASSETS_FOLDER + 'cyclonic_slicers.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'cyclonic_slicers_evolve.png',
       tier: TIER_A,
     },
     {
       name: ANI_MINES,
       icon: WEAPON_ASSETS_FOLDER + 'ani_mines.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'ani_mines_evolve.png',
       tier: TIER_A,
     },
     {
@@ -129,11 +134,13 @@ export class WeaponService {
     {
       name: PAW_PRINT_POISONER,
       icon: WEAPON_ASSETS_FOLDER + 'paw_print_poisoner.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'paw_print_poisoner_evolve.png',
       tier: TIER_B,
     },
     {
       name: LIONESSS_LAMENT,
       icon: WEAPON_ASSETS_FOLDER + 'lionesss_lament.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'lionesss_lament_evolve.png',
       tier: TIER_B,
     },
     {
@@ -151,6 +158,11 @@ export class WeaponService {
       name: JINX_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'jinx_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'jinx_weapon_evolve.png',
+    },
+    {
+      name: BRIAR_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'briar_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'briar_weapon_evolve.png',
     },
   ];
 

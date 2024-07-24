@@ -1,7 +1,7 @@
 <div class="article">
   <!-- header -->
   <div class="header">
-    <img class="header__image" [src]="jinx.icon" />
+    <img class="header__image" [src]="champ.icon" />
     <span class="header__text">Jinx</span>
   </div>
 
@@ -16,9 +16,7 @@
       <p>
         Reach level 25 with Jinx to unlock the
         <span class="item_with_image_round">
-          <img [src]="vortexGlove.icon" /><a class="jinx_item_name"
-            >Vortex Glove</a
-          >
+          <img [src]="vortexGlove.icon" /><a>{{ vortexGlove.name }}</a>
         </span>
         weapon.
       </p>
