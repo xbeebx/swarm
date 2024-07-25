@@ -12,6 +12,8 @@ export const SERAPHINE_ABILITY = 'Seraphine Ability';
 export const SERAPHINE_ULTIMATE = 'Seraphine Ultimate';
 export const ILLAOI_ABILITY = 'Illaoi Ability';
 export const ILLAOI_ULTIMATE = 'Illaoi Ultimate';
+export const LEONA_ABILITY = 'Leona Ability';
+export const LEONA_ULTIMATE = 'Leona Ultimate';
 
 export const ABILITIES = [
   JINX_ABILITY,
@@ -22,6 +24,8 @@ export const ABILITIES = [
   SERAPHINE_ULTIMATE,
   ILLAOI_ABILITY,
   ILLAOI_ULTIMATE,
+  LEONA_ABILITY,
+  LEONA_ULTIMATE,
 ] as const;
 
 export type AbilityTypes = (typeof ABILITIES)[number];

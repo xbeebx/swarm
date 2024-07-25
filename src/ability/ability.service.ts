@@ -9,6 +9,8 @@ import {
   ILLAOI_ULTIMATE,
   JINX_ABILITY,
   JINX_ULTIMATE,
+  LEONA_ABILITY,
+  LEONA_ULTIMATE,
   SERAPHINE_ABILITY,
   SERAPHINE_ULTIMATE,
 } from './ability.interface';
@@ -58,6 +60,16 @@ export class AbilityService {
     {
       name: ILLAOI_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'illaoi_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: LEONA_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'leona_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: LEONA_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'leona_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

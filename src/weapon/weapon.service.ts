@@ -21,6 +21,7 @@ import {
   ICE_BLAST_ARMOR,
   ILLAOI_WEAPON,
   JINX_WEAPON,
+  LEONA_WEAPON,
   LIONESSS_LAMENT,
   PAW_PRINT_POISONER,
   RADIANT_FIELD,
@@ -175,6 +176,11 @@ export class WeaponService {
       name: ILLAOI_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'illaoi_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'illaoi_weapon_evolve.png',
+    },
+    {
+      name: LEONA_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'leona_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'leona_weapon_evolve.png',
     },
   ];
 

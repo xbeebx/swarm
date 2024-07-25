@@ -30,7 +30,8 @@ export const FINAL_CITY_TRANSIT = 'Final City Transit';
 export const JINX_WEAPON = 'Jinx Weapon';
 export const BRIAR_WEAPON = 'Briar Weapon';
 export const SERAPHINE_WEAPON = 'Seraphine Weapon';
-export const ILLAOI_WEAPON = 'Seraphine Weapon';
+export const ILLAOI_WEAPON = 'Illaoi Weapon';
+export const LEONA_WEAPON = 'Leona Weapon';
 
 export const WEAPONS = [
   ICE_BLAST_ARMOR,
@@ -57,6 +58,7 @@ export const WEAPONS = [
   BRIAR_WEAPON,
   SERAPHINE_WEAPON,
   ILLAOI_WEAPON,
+  LEONA_WEAPON,
 ] as const;
 
 export type WeaponTypes = (typeof WEAPONS)[number];
