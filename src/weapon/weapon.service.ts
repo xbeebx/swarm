@@ -34,6 +34,7 @@ import {
   VORTEX_GLOVE,
   Weapon,
   WeaponTypes,
+  YASUO_WEAPON,
   YUUMIBOT,
 } from './weapon.interface';
 
@@ -181,6 +182,11 @@ export class WeaponService {
       name: LEONA_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'leona_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'leona_weapon_evolve.png',
+    },
+    {
+      name: YASUO_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'yasuo_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'yasuo_weapon_evolve.png',
     },
   ];
 

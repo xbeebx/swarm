@@ -4,6 +4,7 @@ import { BriarItemBuildService } from './champ/briar-item-build.service';
 import { IllaoiItemBuildService } from './champ/illaoi-item-build.service';
 import { SeraphineItemBuildService } from './champ/seraphine-item-build.service';
 import { LeonaItemBuildService } from './champ/leona-item-build.service';
+import { YasuoItemBuildService } from './champ/yasuo-item-build.service';
 
 export function provideItemBuilds() {
   return [
@@ -13,5 +14,6 @@ export function provideItemBuilds() {
     IllaoiItemBuildService,
     SeraphineItemBuildService,
     LeonaItemBuildService,
+    YasuoItemBuildService,
   ];
 }

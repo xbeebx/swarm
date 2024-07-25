@@ -13,6 +13,8 @@ import {
   LEONA_ULTIMATE,
   SERAPHINE_ABILITY,
   SERAPHINE_ULTIMATE,
+  YASUO_ABILITY,
+  YASUO_ULTIMATE,
 } from './ability.interface';
 
 const ABILITY_ASSETS_FOLDER = 'assets/abilities/';
@@ -70,6 +72,16 @@ export class AbilityService {
     {
       name: LEONA_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'leona_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: YASUO_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'yasuo_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: YASUO_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'yasuo_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

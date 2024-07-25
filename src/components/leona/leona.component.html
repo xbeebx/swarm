@@ -15,11 +15,12 @@
     <div class="box objective">
       <p>
         Upgrade
-        <span class="item_with_image_round">
-          <img [src]="searingShortBow.icon" [alt]="searingShortBow.name" /><a>{{
-            searingShortBow.name
-          }}</a>
-        </span>
+        <a class="item_with_image_round">
+          <img
+            [src]="searingShortBow.icon"
+            [alt]="searingShortBow.name"
+          /><span>{{ searingShortBow.name }}</span>
+        </a>
         to Level 2.
       </p>
     </div>
@@ -35,12 +36,12 @@
     <div class="box objective">
       <p>
         Reach Level 25 with Leona to unlock the
-        <span class="item_with_image_round">
+        <a class="item_with_image_round">
           <img
             [src]="finalCityTransit.icon"
             [alt]="finalCityTransit.name"
-          /><a>{{ finalCityTransit.name }}</a>
-        </span>
+          /><span>{{ finalCityTransit.name }}</span>
+        </a>
         weapon.
       </p>
     </div>

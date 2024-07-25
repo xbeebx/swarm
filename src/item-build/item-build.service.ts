@@ -6,6 +6,7 @@ import { ItemBuild } from './item-build.interface';
 import { SeraphineItemBuildService } from './champ/seraphine-item-build.service';
 import { IllaoiItemBuildService } from './champ/illaoi-item-build.service';
 import { LeonaItemBuildService } from './champ/leona-item-build.service';
+import { YasuoItemBuildService } from './champ/yasuo-item-build.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,7 @@ export class ItemBuildService {
   #seraphineItemBuildService = inject(SeraphineItemBuildService);
   #illaoiItemBuildService = inject(IllaoiItemBuildService);
   #leonaItemBuildService = inject(LeonaItemBuildService);
+  #yasuoItemBuildService = inject(YasuoItemBuildService);
 
   #itemBuilds: ItemBuild[] = [];
 
@@ -25,7 +27,8 @@ export class ItemBuildService {
       this.#briarItemBuildService.getItemBuilds(),
       this.#seraphineItemBuildService.getItemBuilds(),
       this.#illaoiItemBuildService.getItemBuilds(),
-      this.#leonaItemBuildService.getItemBuilds()
+      this.#leonaItemBuildService.getItemBuilds(),
+      this.#yasuoItemBuildService.getItemBuilds()
     );
   }
 

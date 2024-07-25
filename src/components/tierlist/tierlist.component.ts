@@ -5,6 +5,7 @@ import { NgFor, NgStyle } from '@angular/common';
 import { ChampionService } from '../../champion/champion.service';
 import { WeaponService } from '../../weapon/weapon.service';
 import { NavigationService } from '../navbar/navbar.service';
+import { BRIAR, JINX, LEONA } from '../../champion/champion.interface';
 
 @Component({
   selector: 'swarm-tierlist',
@@ -18,4 +19,8 @@ export class TierlistComponent {
   navigationService = inject(NavigationService);
   championService = inject(ChampionService);
   weaponsService = inject(WeaponService);
+
+  briar = this.championService.getChampionByName(BRIAR);
+  leona = this.championService.getChampionByName(LEONA);
+  jinx = this.championService.getChampionByName(JINX);
 }

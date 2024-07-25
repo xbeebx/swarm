@@ -11,15 +11,45 @@
     <span class="subheader__text">Champion tier list</span>
   </div>
 
-  <!-- description -->
+  <!-- tip -->
+  <div class="subheader">
+    <i class="subheader__image ri-lightbulb-fill"></i>
+    <span class="subheader__text">Tip</span>
+  </div>
+
   <div class="container-wrapper-vertical">
-    <p class="tierlist-desc">
-      Strongest champions based on unique weapon, damage, and solo-play
-      potential.<br />
-      <strong>For new players: </strong><a href="/briar">Briar</a>,
-      <a href="/leona">Leona</a>, and <a href="/jinx">Jinx</a> are very strong
-      early on.
-    </p>
+    <div class="box objective">
+      <p>
+        Strongest champions based on unique weapon, damage, and solo-play
+        potential.
+        <a
+          class="item_with_image_round"
+          [href]="navigationService.getItemByName(briar.name).link"
+        >
+          <img [src]="briar.icon" [alt]="briar.name" /><span
+            >{{ briar.name }}
+          </span> </a
+        >,
+        <a
+          class="item_with_image_round"
+          [href]="navigationService.getItemByName(leona.name).link"
+        >
+          <img [src]="leona.icon" [alt]="leona.name" /><span
+            >{{ leona.name }}
+          </span>
+        </a>
+        and
+        <a
+          class="item_with_image_round"
+          [href]="navigationService.getItemByName(jinx.name).link"
+        >
+          <img [src]="jinx.icon" [alt]="jinx.name" /><span
+            >{{ jinx.name }}
+          </span>
+        </a>
+        are very strong early on.
+      </p>
+    </div>
   </div>
 
   <div class="container-wrapper-vertical" [ngStyle]="{ gap: '12px' }">

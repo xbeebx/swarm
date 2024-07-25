@@ -14,8 +14,20 @@
   <div class="container-wrapper-vertical">
     <div class="box objective">
       <p>
-        You can use Briar's Ult to fly anywhere across the map. Place your
-        cursor where you want to go on your mini-map as you use Briar's ult.
+        You can use
+        <a class="item_with_image_round">
+          <img [src]="ultimate.icon" [alt]="ultimate.name" /><span
+            >Briar's ultimate
+          </span>
+        </a>
+
+        to fly anywhere across the map. Place your cursor where you want to go
+        on your mini-map as you use
+        <a class="item_with_image_round">
+          <img [src]="ultimate.icon" [alt]="ultimate.name" /><span
+            >Briar's ultimate</span
+          ></a
+        >.
       </p>
     </div>
   </div>
@@ -23,24 +35,30 @@
   <!-- how to unlock briar -->
   <div class="subheader">
     <i class="subheader__image ri-key-fill"></i>
-    <span class="subheader__text">How to unlock briar</span>
+    <span class="subheader__text">How to unlock Briar</span>
   </div>
 
   <div class="container-wrapper-vertical">
     <div class="box objective">
       <p>
         Defeat Briar on The Outskirts map (2nd map).
-        <span class="item_with_image_round">
-          <img [src]="jinx.icon" [alt]="jinx.name" /><a href="/jinx">{{
+        <a
+          class="item_with_image_round"
+          [href]="navigationService.getItemByName(jinx.name).link"
+        >
+          <img [src]="jinx.icon" [alt]="jinx.name" /><span>{{
             jinx.name
-          }}</a>
-        </span>
+          }}</span>
+        </a>
         and
-        <span class="item_with_image_round">
-          <img [src]="leona.icon" [alt]="leona.name" /><a href="/leona">{{
+        <a
+          class="item_with_image_round"
+          [href]="navigationService.getItemByName(leona.name).link"
+        >
+          <img [src]="leona.icon" [alt]="leona.name" /><span>{{
             leona.name
-          }}</a>
-        </span>
+          }}</span>
+        </a>
         are both strong on this map.
       </p>
     </div>
@@ -56,12 +74,12 @@
     <div class="box objective">
       <p>
         Reach level 30 with Briar to unlock the
-        <span class="item_with_image_round">
+        <a class="item_with_image_round">
           <img
             [src]="antiSharkSeaMine.icon"
             [alt]="antiSharkSeaMine.name"
-          /><a>{{ antiSharkSeaMine.name }}</a>
-        </span>
+          /><span>{{ antiSharkSeaMine.name }}</span>
+        </a>
         weapon.
       </p>
     </div>

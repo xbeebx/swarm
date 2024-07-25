@@ -14,6 +14,8 @@ export const ILLAOI_ABILITY = 'Illaoi Ability';
 export const ILLAOI_ULTIMATE = 'Illaoi Ultimate';
 export const LEONA_ABILITY = 'Leona Ability';
 export const LEONA_ULTIMATE = 'Leona Ultimate';
+export const YASUO_ABILITY = 'Yasuo Ability';
+export const YASUO_ULTIMATE = 'Yasuo Ultimate';
 
 export const ABILITIES = [
   JINX_ABILITY,
@@ -26,6 +28,8 @@ export const ABILITIES = [
   ILLAOI_ULTIMATE,
   LEONA_ABILITY,
   LEONA_ULTIMATE,
+  YASUO_ABILITY,
+  YASUO_ULTIMATE,
 ] as const;
 
 export type AbilityTypes = (typeof ABILITIES)[number];

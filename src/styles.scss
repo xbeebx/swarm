@@ -63,6 +63,7 @@ body {
 
 .item_with_image_round {
   display: inline-block;
+  text-decoration: none;
 
   img {
     margin-right: 8px;
@@ -73,14 +74,14 @@ body {
     vertical-align: bottom;
   }
 
-  a {
+  span {
     color: #3273fa;
-    text-decoration: none;
   }
 }
 
 .upgrade_with_image_round {
   display: inline-block;
+  text-decoration: none;
 
   img {
     margin-right: 8px;
@@ -89,9 +90,8 @@ body {
     vertical-align: bottom;
   }
 
-  a {
+  span {
     color: #36bda8;
-    text-decoration: none;
   }
 }
 
