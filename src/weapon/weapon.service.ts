@@ -25,6 +25,7 @@ import {
   LIONESSS_LAMENT,
   PAW_PRINT_POISONER,
   RADIANT_FIELD,
+  RIVEN_WEAPON,
   SEARING_SHORTBOW,
   SERAPHINE_WEAPON,
   STATIKK_SWORD,
@@ -187,6 +188,11 @@ export class WeaponService {
       name: YASUO_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'yasuo_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'yasuo_weapon_evolve.png',
+    },
+    {
+      name: RIVEN_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'riven_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'riven_weapon_evolve.png',
     },
   ];
 

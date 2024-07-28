@@ -11,6 +11,8 @@ import {
   JINX_ULTIMATE,
   LEONA_ABILITY,
   LEONA_ULTIMATE,
+  RIVEN_ABILITY,
+  RIVEN_ULTIMATE,
   SERAPHINE_ABILITY,
   SERAPHINE_ULTIMATE,
   YASUO_ABILITY,
@@ -82,6 +84,16 @@ export class AbilityService {
     {
       name: YASUO_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'yasuo_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: RIVEN_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'riven_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: RIVEN_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'riven_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

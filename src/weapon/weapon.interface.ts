@@ -33,6 +33,7 @@ export const SERAPHINE_WEAPON = 'Seraphine Weapon';
 export const ILLAOI_WEAPON = 'Illaoi Weapon';
 export const LEONA_WEAPON = 'Leona Weapon';
 export const YASUO_WEAPON = 'Yasuo Weapon';
+export const RIVEN_WEAPON = 'Riven Weapon';
 
 export const WEAPONS = [
   ICE_BLAST_ARMOR,
@@ -61,6 +62,7 @@ export const WEAPONS = [
   ILLAOI_WEAPON,
   LEONA_WEAPON,
   YASUO_WEAPON,
+  RIVEN_WEAPON,
 ] as const;
 
 export type WeaponTypes = (typeof WEAPONS)[number];

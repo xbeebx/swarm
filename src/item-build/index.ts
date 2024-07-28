@@ -5,6 +5,7 @@ import { IllaoiItemBuildService } from './champ/illaoi-item-build.service';
 import { SeraphineItemBuildService } from './champ/seraphine-item-build.service';
 import { LeonaItemBuildService } from './champ/leona-item-build.service';
 import { YasuoItemBuildService } from './champ/yasuo-item-build.service';
+import { RivenItemBuildService } from './champ/riven-item-build.service';
 
 export function provideItemBuilds() {
   return [
@@ -15,5 +16,6 @@ export function provideItemBuilds() {
     SeraphineItemBuildService,
     LeonaItemBuildService,
     YasuoItemBuildService,
+    RivenItemBuildService,
   ];
 }

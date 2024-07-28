@@ -4,9 +4,11 @@ import {
   AugmentTypes,
   CARD_COLLECTOR,
   CROSS_COUNTRY,
+  GATHERING_SPEED,
   RAMMING_RUNNER,
   ULTIMATE_SPEED_UP,
   UPTIME_UPGRADE,
+  WITH_HASTE,
 } from './augment.interface';
 
 const AUGMENT_ASSETS_FOLDER = 'assets/augments/';
@@ -40,6 +42,16 @@ export class AugmentService {
       name: CARD_COLLECTOR,
       icon: AUGMENT_ASSETS_FOLDER + 'card_collector.png',
       desc: '<strong>Each Access Card upgrade</strong> you pick up <strong>increases</strong> your <strong>damage by 5%</strong>. This is a very strong upgrade when found in early-mid stages. It’s not as strong once you start to get close to level 35.',
+    },
+    {
+      name: GATHERING_SPEED,
+      icon: AUGMENT_ASSETS_FOLDER + 'gathering_speed.png',
+      desc: 'Lose <strong>15% total Movement Speed</strong>, but gain <strong>+3% Movement Speed</strong> every time you level up.',
+    },
+    {
+      name: WITH_HASTE,
+      icon: AUGMENT_ASSETS_FOLDER + 'with_haste.png',
+      desc: 'Gain <strong>+1% Movement Speed</strong> for every <strong>2 Ability Haste</strong> you have.',
     },
   ];
 
