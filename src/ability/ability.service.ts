@@ -3,6 +3,8 @@ import {
   Ability,
   ABILITY_TYPE_NORMAL,
   ABILITY_TYPE_ULTIMATE,
+  AURORA_ABILITY,
+  AURORA_ULTIMATE,
   BRIAR_ABILITY,
   BRIAR_ULTIMATE,
   ILLAOI_ABILITY,
@@ -106,6 +108,16 @@ export class AbilityService {
     {
       name: XAYAH_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'xayah_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: AURORA_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'aurora_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: AURORA_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'aurora_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

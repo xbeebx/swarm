@@ -3,7 +3,7 @@ import { TierTypes } from '../tier/tier.interface';
 export interface Weapon {
   name: WeaponTypes;
   icon: string;
-  iconEvolve?: string;
+  iconEvolve: string;
   tier?: TierTypes;
 }
 
@@ -35,6 +35,7 @@ export const LEONA_WEAPON = 'Leona Weapon';
 export const YASUO_WEAPON = 'Yasuo Weapon';
 export const RIVEN_WEAPON = 'Riven Weapon';
 export const XAYAH_WEAPON = 'Xayah Weapon';
+export const AURORA_WEAPON = 'Aurora Weapon';
 
 export const WEAPONS = [
   ICE_BLAST_ARMOR,
@@ -65,6 +66,7 @@ export const WEAPONS = [
   YASUO_WEAPON,
   RIVEN_WEAPON,
   XAYAH_WEAPON,
+  AURORA_WEAPON,
 ] as const;
 
 export type WeaponTypes = (typeof WEAPONS)[number];

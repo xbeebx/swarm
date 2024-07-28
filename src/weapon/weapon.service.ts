@@ -10,6 +10,7 @@ import {
 import {
   ANI_MINES,
   ANTI_SHAK_SEA_MINE as ANTI_SHARK_SEA_MINE,
+  AURORA_WEAPON,
   BATTLE_BUNNY_CROWBOW,
   BLADE_O_RANG,
   BRIAR_WEAPON,
@@ -98,6 +99,7 @@ export class WeaponService {
     {
       name: ECHOING_BATBLADES,
       icon: WEAPON_ASSETS_FOLDER + 'echoing_batblades.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'echoing_batblades_evolve.png',
       tier: TIER_A,
     },
     {
@@ -205,6 +207,11 @@ export class WeaponService {
       name: XAYAH_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'xayah_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'xayah_weapon_evolve.png',
+    },
+    {
+      name: AURORA_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'aurora_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'aurora_weapon_evolve.png',
     },
   ];
 

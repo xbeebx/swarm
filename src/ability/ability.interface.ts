@@ -20,6 +20,8 @@ export const RIVEN_ABILITY = 'Riven Ability';
 export const RIVEN_ULTIMATE = 'Riven Ultimate';
 export const XAYAH_ABILITY = 'Xayah Ability';
 export const XAYAH_ULTIMATE = 'Xayah Ultimate';
+export const AURORA_ABILITY = 'Aurora Ability';
+export const AURORA_ULTIMATE = 'Aurora Ultimate';
 
 export const ABILITIES = [
   JINX_ABILITY,
@@ -38,6 +40,8 @@ export const ABILITIES = [
   RIVEN_ULTIMATE,
   XAYAH_ABILITY,
   XAYAH_ULTIMATE,
+  AURORA_ABILITY,
+  AURORA_ULTIMATE,
 ] as const;
 
 export type AbilityTypes = (typeof ABILITIES)[number];
