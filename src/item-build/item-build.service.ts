@@ -8,6 +8,7 @@ import { IllaoiItemBuildService } from './champ/illaoi-item-build.service';
 import { LeonaItemBuildService } from './champ/leona-item-build.service';
 import { YasuoItemBuildService } from './champ/yasuo-item-build.service';
 import { RivenItemBuildService } from './champ/riven-item-build.service';
+import { XayahItemBuildService } from './champ/xayah-item-build.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,7 @@ export class ItemBuildService {
   #leonaItemBuildService = inject(LeonaItemBuildService);
   #yasuoItemBuildService = inject(YasuoItemBuildService);
   #rivenItemBuildService = inject(RivenItemBuildService);
+  #xayahItemBuildService = inject(XayahItemBuildService);
 
   #itemBuilds: ItemBuild[] = [];
 
@@ -31,7 +33,8 @@ export class ItemBuildService {
       this.#illaoiItemBuildService.getItemBuilds(),
       this.#leonaItemBuildService.getItemBuilds(),
       this.#yasuoItemBuildService.getItemBuilds(),
-      this.#rivenItemBuildService.getItemBuilds()
+      this.#rivenItemBuildService.getItemBuilds(),
+      this.#xayahItemBuildService.getItemBuilds()
     );
   }
 

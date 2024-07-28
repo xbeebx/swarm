@@ -1,1 +1,107 @@
-<div>Xayah under construction!</div>
+<div class="article">
+  <!-- header -->
+  <div class="header">
+    <img class="header__image" [src]="champ.icon" [alt]="champ.name" />
+    <span class="header__text">Xayah</span>
+  </div>
+
+  <!-- unlock champ -->
+  <div class="subheader">
+    <i class="subheader__image ri-lock-unlock-fill"></i>
+    <span class="subheader__text">How to unlock {{ champ.name }}</span>
+  </div>
+
+  <div class="container-wrapper-vertical">
+    <div class="box objective">
+      <p>On Hard difficulty, complete a total of 20 Bel´Veth Trials.</p>
+    </div>
+  </div>
+
+  <!-- subheader -->
+  <div class="subheader">
+    <i class="subheader__image ri-book-shelf-fill"></i>
+    <span class="subheader__text">Builds</span>
+  </div>
+
+  <!-- itembuilds -->
+  <div class="container-wrapper-vertical">
+    <div class="itembuild" *ngFor="let itemBuild of itemBuilds">
+      <div class="itembuild__top">
+        <!-- name and desc on left side -->
+        <div class="itembuild__top__left">
+          <div class="itembuild__top__left__name">
+            {{ itemBuild.name }}
+          </div>
+          <div class="itembuild__top__left__desc">
+            {{ itemBuild.desc }}
+          </div>
+        </div>
+
+        <!-- abilities and weapons on right side -->
+        <div class="itembuild__top__right">
+          <div class="itembuild__top__right__area">
+            <div class="itembuild__top__right__area__title">Abilities</div>
+            <div class="itembuild__top__right__area__content">
+              <!-- abilities -->
+              <div
+                class="itembuild__top__right__area__content__item"
+                *ngFor="let ability of itemBuild.abilities"
+              >
+                <img
+                  class="itembuild__top__right__area__content__item__image"
+                  [src]="ability.icon"
+                  [alt]="ability.name"
+                />
+                <p
+                  class="itembuild__top__right__area__content__item__item-text"
+                >
+                  {{ ability.type }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="itembuild__top__right__area">
+            <div class="itembuild__top__right__area__title">Weapons</div>
+            <div class="itembuild__top__right__area__content">
+              <!-- weapons -->
+              <div
+                class="itembuild__top__right__area__content__item"
+                *ngFor="let weapon of itemBuild.weapons"
+              >
+                <img
+                  class="itembuild__top__right__area__content__item__image"
+                  [src]="weapon.iconEvolve"
+                  [alt]="weapon.name"
+                />
+                <p
+                  class="itembuild__top__right__area__content__item__item-text"
+                >
+                  {{ weapon.name }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="itembuild__bottom">
+        <div class="itembuild__bottom__title">Attributes</div>
+        <div class="itembuild__bottom__content">
+          <div class="itembuild__bottom__content__attributes">
+            <div
+              class="itembuild__bottom__content__attributes__attribute"
+              *ngFor="let attribute of itemBuild.attributes"
+            >
+              <img [src]="attribute.icon" [alt]="attribute.name" />
+              <div
+                class="itembuild__bottom__content__attributes__attribute__name"
+              >
+                {{ attribute.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

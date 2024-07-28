@@ -15,6 +15,8 @@ import {
   RIVEN_ULTIMATE,
   SERAPHINE_ABILITY,
   SERAPHINE_ULTIMATE,
+  XAYAH_ABILITY,
+  XAYAH_ULTIMATE,
   YASUO_ABILITY,
   YASUO_ULTIMATE,
 } from './ability.interface';
@@ -94,6 +96,16 @@ export class AbilityService {
     {
       name: RIVEN_ULTIMATE,
       icon: ABILITY_ASSETS_FOLDER + 'riven_ultimate.png',
+      type: ABILITY_TYPE_ULTIMATE,
+    },
+    {
+      name: XAYAH_ABILITY,
+      icon: ABILITY_ASSETS_FOLDER + 'xayah_ability.png',
+      type: ABILITY_TYPE_NORMAL,
+    },
+    {
+      name: XAYAH_ULTIMATE,
+      icon: ABILITY_ASSETS_FOLDER + 'xayah_ultimate.png',
       type: ABILITY_TYPE_ULTIMATE,
     },
   ];

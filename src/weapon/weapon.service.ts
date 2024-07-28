@@ -35,6 +35,7 @@ import {
   VORTEX_GLOVE,
   Weapon,
   WeaponTypes,
+  XAYAH_WEAPON,
   YASUO_WEAPON,
   YUUMIBOT,
 } from './weapon.interface';
@@ -135,7 +136,12 @@ export class WeaponService {
       iconEvolve: WEAPON_ASSETS_FOLDER + 'gatling_bunny_guns_evolve.png',
       tier: TIER_A,
     },
-    { name: TIBBERS, icon: WEAPON_ASSETS_FOLDER + 'tibbers.png', tier: TIER_B },
+    {
+      name: TIBBERS,
+      icon: WEAPON_ASSETS_FOLDER + 'tibbers.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'tibbers_evolve.png',
+      tier: TIER_B,
+    },
     {
       name: PAW_PRINT_POISONER,
       icon: WEAPON_ASSETS_FOLDER + 'paw_print_poisoner.png',
@@ -157,6 +163,7 @@ export class WeaponService {
     {
       name: FINAL_CITY_TRANSIT,
       icon: WEAPON_ASSETS_FOLDER + 'final_city_transit.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'final_city_transit_evolve.png',
       tier: TIER_C,
     },
     {
@@ -193,6 +200,11 @@ export class WeaponService {
       name: RIVEN_WEAPON,
       icon: WEAPON_ASSETS_FOLDER + 'riven_weapon_evolve.png',
       iconEvolve: WEAPON_ASSETS_FOLDER + 'riven_weapon_evolve.png',
+    },
+    {
+      name: XAYAH_WEAPON,
+      icon: WEAPON_ASSETS_FOLDER + 'xayah_weapon_evolve.png',
+      iconEvolve: WEAPON_ASSETS_FOLDER + 'xayah_weapon_evolve.png',
     },
   ];
 
