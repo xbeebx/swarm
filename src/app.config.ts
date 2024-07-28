@@ -8,7 +8,7 @@ import { provideWeapons } from './weapon';
 import { provideAbilities } from './ability';
 import { provideItemBuilds } from './item-build';
 import { provideAugments } from './augment';
-import { provideAttributes } from './attribute';
+import { providePassives } from './passive';
 import { provideUpgrades } from './upgrades';
 
 export const appConfig: ApplicationConfig = {
@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideAbilities(),
     provideItemBuilds(),
     provideAugments(),
-    provideAttributes(),
+    providePassives(),
     provideUpgrades(),
   ],
 };

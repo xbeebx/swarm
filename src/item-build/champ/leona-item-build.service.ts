@@ -6,13 +6,13 @@ import {
   ARMOR,
   CRITICAL_CHANCE,
   DAMAGE,
-  EXPERIENCE,
-  HASTE,
+  EXP,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { LEONA } from '../../champion/champion.interface';
 import {
   BATTLE_BUNNY_CROWBOW,
@@ -35,7 +35,7 @@ import { ItemBuild } from '../item-build.interface';
 export class LeonaItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -53,13 +53,13 @@ export class LeonaItemBuildService {
         this.#abilityService.getAbilityByName(LEONA_ABILITY),
         this.#abilityService.getAbilityByName(LEONA_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(AREA_SIZE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -77,13 +77,13 @@ export class LeonaItemBuildService {
         this.#abilityService.getAbilityByName(LEONA_ABILITY),
         this.#abilityService.getAbilityByName(LEONA_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(DAMAGE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -101,13 +101,13 @@ export class LeonaItemBuildService {
         this.#abilityService.getAbilityByName(LEONA_ABILITY),
         this.#abilityService.getAbilityByName(LEONA_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
   ];

@@ -6,12 +6,12 @@ import {
   ARMOR,
   CRITICAL_CHANCE,
   DAMAGE,
-  HASTE,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MOVEMENT_SPEED,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { YASUO } from '../../champion/champion.interface';
 import {
   BATTLE_BUNNY_CROWBOW,
@@ -32,7 +32,7 @@ import { ItemBuild } from '../item-build.interface';
 export class YasuoItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -50,13 +50,13 @@ export class YasuoItemBuildService {
         this.#abilityService.getAbilityByName(YASUO_ABILITY),
         this.#abilityService.getAbilityByName(YASUO_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
       ],
     },
     {
@@ -74,13 +74,13 @@ export class YasuoItemBuildService {
         this.#abilityService.getAbilityByName(YASUO_ABILITY),
         this.#abilityService.getAbilityByName(YASUO_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -98,13 +98,13 @@ export class YasuoItemBuildService {
         this.#abilityService.getAbilityByName(YASUO_ABILITY),
         this.#abilityService.getAbilityByName(YASUO_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
   ];

@@ -10,14 +10,14 @@ import {
   CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
-  EXPERIENCE,
-  HASTE,
+  EXP,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
   MOVEMENT_SPEED,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { AURORA } from '../../champion/champion.interface';
 import {
   AURORA_WEAPON,
@@ -41,7 +41,7 @@ import { ItemBuild } from '../item-build.interface';
 export class AuroraItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -59,13 +59,13 @@ export class AuroraItemBuildService {
         this.#abilityService.getAbilityByName(AURORA_ABILITY),
         this.#abilityService.getAbilityByName(AURORA_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+      passives: [
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(DURATION),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -83,13 +83,13 @@ export class AuroraItemBuildService {
         this.#abilityService.getAbilityByName(AURORA_ABILITY),
         this.#abilityService.getAbilityByName(AURORA_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+      passives: [
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -107,12 +107,12 @@ export class AuroraItemBuildService {
         this.#abilityService.getAbilityByName(AURORA_ABILITY),
         this.#abilityService.getAbilityByName(AURORA_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+      passives: [
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
       ],
     },

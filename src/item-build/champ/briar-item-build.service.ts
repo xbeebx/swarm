@@ -6,13 +6,13 @@ import {
   ARMOR,
   CRITICAL_CHANCE,
   DAMAGE,
-  EXPERIENCE,
-  HASTE,
+  EXP,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
   MOVEMENT_SPEED,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { BRIAR } from '../../champion/champion.interface';
 import {
   ANI_MINES,
@@ -40,7 +40,7 @@ import { ItemBuild } from '../item-build.interface';
 export class BriarItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -58,13 +58,13 @@ export class BriarItemBuildService {
         this.#abilityService.getAbilityByName(BRIAR_ABILITY),
         this.#abilityService.getAbilityByName(BRIAR_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(EXPERIENCE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(EXP),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -82,13 +82,13 @@ export class BriarItemBuildService {
         this.#abilityService.getAbilityByName(BRIAR_ABILITY),
         this.#abilityService.getAbilityByName(BRIAR_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -106,13 +106,13 @@ export class BriarItemBuildService {
         this.#abilityService.getAbilityByName(BRIAR_ABILITY),
         this.#abilityService.getAbilityByName(BRIAR_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -130,13 +130,13 @@ export class BriarItemBuildService {
         this.#abilityService.getAbilityByName(BRIAR_ABILITY),
         this.#abilityService.getAbilityByName(BRIAR_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -154,13 +154,13 @@ export class BriarItemBuildService {
         this.#abilityService.getAbilityByName(BRIAR_ABILITY),
         this.#abilityService.getAbilityByName(BRIAR_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
   ];

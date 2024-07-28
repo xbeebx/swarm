@@ -10,13 +10,13 @@ import {
   CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
-  EXPERIENCE,
-  HASTE,
+  EXP,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { SERAPHINE } from '../../champion/champion.interface';
 import {
   ANI_MINES,
@@ -40,7 +40,7 @@ import { ItemBuild } from '../item-build.interface';
 export class SeraphineItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -58,13 +58,13 @@ export class SeraphineItemBuildService {
         this.#abilityService.getAbilityByName(SERAPHINE_ABILITY),
         this.#abilityService.getAbilityByName(SERAPHINE_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(PROJECTILES),
+      passives: [
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(DURATION),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -82,13 +82,13 @@ export class SeraphineItemBuildService {
         this.#abilityService.getAbilityByName(SERAPHINE_ABILITY),
         this.#abilityService.getAbilityByName(SERAPHINE_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(PROJECTILES),
+      passives: [
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(AREA_SIZE),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -106,13 +106,13 @@ export class SeraphineItemBuildService {
         this.#abilityService.getAbilityByName(SERAPHINE_ABILITY),
         this.#abilityService.getAbilityByName(SERAPHINE_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(PROJECTILES),
+      passives: [
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
   ];

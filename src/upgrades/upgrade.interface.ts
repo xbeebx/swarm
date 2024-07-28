@@ -14,9 +14,9 @@ export const PICKUP_RADIUS = 'Pickup Radius';
 export const AREA_SIZE = 'Area Size';
 export const DURATION = 'Duration';
 export const CRITICAL_CHANCE = 'Critical Chance';
-export const ABILITY_HASTE = 'Ability Hase';
-export const EXPERIENCE = 'Experience';
-export const PROJECTILES = 'Projectiles';
+export const ABILITY_HASTE = 'Ability Hatse';
+export const EXP = 'EXP';
+export const PROJECTILE_COUNT = 'Projectile Count';
 export const GOLD_MULTIPLIER = 'Gold Multiplier';
 export const BATTLE_BUNNY_BOON_DURATION = 'Battle Bunny Boon Duration';
 export const ANIMA_POWER = 'Anima Power';
@@ -32,8 +32,8 @@ export const UPGRADES = [
   DURATION,
   CRITICAL_CHANCE,
   ABILITY_HASTE,
-  EXPERIENCE,
-  PROJECTILES,
+  EXP,
+  PROJECTILE_COUNT,
   GOLD_MULTIPLIER,
   BATTLE_BUNNY_BOON_DURATION,
   ANIMA_POWER,

@@ -1,5 +1,5 @@
 import { Ability } from '../ability/ability.interface';
-import { Attribute } from '../attribute/attribute.interface';
+import { Passive } from '../passive/passive.interface';
 import { ChampionTypes } from '../champion/champion.interface';
 import { Weapon } from '../weapon/weapon.interface';
 
@@ -9,5 +9,5 @@ export interface ItemBuild {
   champion: ChampionTypes;
   weapons: Weapon[];
   abilities: Ability[];
-  attributes: Attribute[];
+  passives: Passive[];
 }

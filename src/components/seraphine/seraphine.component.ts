@@ -6,7 +6,7 @@ import { ItemBuildService } from '../../item-build/item-build.service';
 import { WeaponService } from '../../weapon/weapon.service';
 import { SERAPHINE } from '../../champion/champion.interface';
 import { UpgradeService } from '../../upgrades/upgrade.service';
-import { PROJECTILES } from '../../upgrades/upgrade.interface';
+import { PROJECTILE_COUNT } from '../../upgrades/upgrade.interface';
 
 @Component({
   selector: 'swarm-seraphine',
@@ -22,7 +22,7 @@ export class SeraphineComponent {
   weaponService = inject(WeaponService);
 
   champ = this.#championService.getChampionByName(SERAPHINE);
-  projectiles = this.#upgradeService.getUpgradeByName(PROJECTILES);
+  projectileCount = this.#upgradeService.getUpgradeByName(PROJECTILE_COUNT);
 
   itemBuilds = this.#itemBuildService.getItemBuildsByChampion(SERAPHINE);
 }

@@ -3,7 +3,7 @@ import { JINX } from '../../champion/champion.interface';
 import { ItemBuild } from '../item-build.interface';
 import { WeaponService } from '../../weapon/weapon.service';
 import { AbilityService } from '../../ability/ability.service';
-import { AttributeService } from '../../attribute/attribute.service';
+import { PassiveService } from '../../passive/passive.service';
 import {
   BATTLE_BUNNY_CROWBOW,
   BLADE_O_RANG,
@@ -25,13 +25,13 @@ import {
   CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
-  HASTE,
+  ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
   MOVEMENT_SPEED,
   PICKUP_RADIUS,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -39,7 +39,7 @@ import {
 export class JinxItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -57,13 +57,13 @@ export class JinxItemBuildService {
         this.#abilityService.getAbilityByName(JINX_ABILITY),
         this.#abilityService.getAbilityByName(JINX_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(HASTE),
+      passives: [
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
-        this.#attributeService.getAttributeByName(PROJECTILES),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
       ],
     },
     {
@@ -81,8 +81,8 @@ export class JinxItemBuildService {
         this.#abilityService.getAbilityByName(JINX_ABILITY),
         this.#abilityService.getAbilityByName(JINX_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(HASTE),
+      passives: [
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
         this.#attributeService.getAttributeByName(DURATION),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(AREA_SIZE),
@@ -105,8 +105,8 @@ export class JinxItemBuildService {
         this.#abilityService.getAbilityByName(JINX_ABILITY),
         this.#abilityService.getAbilityByName(JINX_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(HASTE),
+      passives: [
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
         this.#attributeService.getAttributeByName(MOVEMENT_SPEED),
         this.#attributeService.getAttributeByName(PICKUP_RADIUS),
         this.#attributeService.getAttributeByName(DAMAGE),
@@ -129,8 +129,8 @@ export class JinxItemBuildService {
         this.#abilityService.getAbilityByName(JINX_ABILITY),
         this.#abilityService.getAbilityByName(JINX_ULTIMATE),
       ],
-      attributes: [
-        this.#attributeService.getAttributeByName(HASTE),
+      passives: [
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
         this.#attributeService.getAttributeByName(HEALTH_REGENERATION),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),

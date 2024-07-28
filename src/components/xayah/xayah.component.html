@@ -85,18 +85,16 @@
         </div>
       </div>
       <div class="itembuild__bottom">
-        <div class="itembuild__bottom__title">Attributes</div>
+        <div class="itembuild__bottom__title">Passives</div>
         <div class="itembuild__bottom__content">
-          <div class="itembuild__bottom__content__attributes">
+          <div class="itembuild__bottom__content__passives">
             <div
-              class="itembuild__bottom__content__attributes__attribute"
-              *ngFor="let attribute of itemBuild.attributes"
+              class="itembuild__bottom__content__passives__passive"
+              *ngFor="let passive of itemBuild.passives"
             >
-              <img [src]="attribute.icon" [alt]="attribute.name" />
-              <div
-                class="itembuild__bottom__content__attributes__attribute__name"
-              >
-                {{ attribute.name }}
+              <img [src]="passive.icon" [alt]="passive.name" />
+              <div class="itembuild__bottom__content__passives__passive__name">
+                {{ passive.name }}
               </div>
             </div>
           </div>

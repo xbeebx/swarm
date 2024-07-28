@@ -1,34 +1,35 @@
-export interface Attribute {
-  name: AttributeTypes;
+export interface Passive {
+  name: PassiveTypes;
   icon: string;
+  amountPerLevel: string;
 }
 
-export const HASTE = 'Haste';
+export const ABILITY_HASTE = 'Ability Haste';
 export const CRITICAL_CHANCE = 'Critical Chance';
 export const DAMAGE = 'Damage';
 export const AREA_SIZE = 'Area Size';
 export const MAX_HEALTH = 'Max Health';
-export const PROJECTILES = 'Projectiles';
+export const PROJECTILE_COUNT = 'Projectile Count';
 export const DURATION = 'Duration';
 export const MOVEMENT_SPEED = 'Movement Speed';
 export const HEALTH_REGENERATION = 'Health Regeneration';
 export const PICKUP_RADIUS = 'Pickup Radius';
 export const ARMOR = 'Armor';
-export const EXPERIENCE = 'Experience';
+export const EXP = 'EXP';
 
-export const ATTRIBUTES = [
-  HASTE,
+export const PASSIVES = [
+  ABILITY_HASTE,
   CRITICAL_CHANCE,
   DAMAGE,
   AREA_SIZE,
   MAX_HEALTH,
-  PROJECTILES,
+  PROJECTILE_COUNT,
   DURATION,
   MOVEMENT_SPEED,
   HEALTH_REGENERATION,
   PICKUP_RADIUS,
   ARMOR,
-  EXPERIENCE,
+  EXP,
 ] as const;
 
-export type AttributeTypes = (typeof ATTRIBUTES)[number];
+export type PassiveTypes = (typeof PASSIVES)[number];

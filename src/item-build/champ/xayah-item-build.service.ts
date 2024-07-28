@@ -7,13 +7,13 @@ import {
   CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
-  EXPERIENCE,
-  HASTE,
+  EXP,
+  ABILITY_HASTE,
   MAX_HEALTH,
   PICKUP_RADIUS,
-  PROJECTILES,
-} from '../../attribute/attribute.interface';
-import { AttributeService } from '../../attribute/attribute.service';
+  PROJECTILE_COUNT,
+} from '../../passive/passive.interface';
+import { PassiveService } from '../../passive/passive.service';
 import { XAYAH } from '../../champion/champion.interface';
 import {
   BATTLE_BUNNY_CROWBOW,
@@ -37,7 +37,7 @@ import { ItemBuild } from '../item-build.interface';
 export class XayahItemBuildService {
   #weaponService = inject(WeaponService);
   #abilityService = inject(AbilityService);
-  #attributeService = inject(AttributeService);
+  #attributeService = inject(PassiveService);
 
   #itemBuilds: ItemBuild[] = [
     {
@@ -55,13 +55,13 @@ export class XayahItemBuildService {
         this.#abilityService.getAbilityByName(XAYAH_ABILITY),
         this.#abilityService.getAbilityByName(XAYAH_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(PICKUP_RADIUS),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(ARMOR),
-        this.#attributeService.getAttributeByName(PROJECTILES),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -79,13 +79,13 @@ export class XayahItemBuildService {
         this.#abilityService.getAbilityByName(XAYAH_ABILITY),
         this.#abilityService.getAbilityByName(XAYAH_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(PICKUP_RADIUS),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
         this.#attributeService.getAttributeByName(DURATION),
-        this.#attributeService.getAttributeByName(PROJECTILES),
-        this.#attributeService.getAttributeByName(HASTE),
+        this.#attributeService.getAttributeByName(PROJECTILE_COUNT),
+        this.#attributeService.getAttributeByName(ABILITY_HASTE),
       ],
     },
     {
@@ -103,11 +103,11 @@ export class XayahItemBuildService {
         this.#abilityService.getAbilityByName(XAYAH_ABILITY),
         this.#abilityService.getAbilityByName(XAYAH_ULTIMATE),
       ],
-      attributes: [
+      passives: [
         this.#attributeService.getAttributeByName(PICKUP_RADIUS),
         this.#attributeService.getAttributeByName(CRITICAL_CHANCE),
         this.#attributeService.getAttributeByName(DAMAGE),
-        this.#attributeService.getAttributeByName(EXPERIENCE),
+        this.#attributeService.getAttributeByName(EXP),
         this.#attributeService.getAttributeByName(AREA_SIZE),
         this.#attributeService.getAttributeByName(MAX_HEALTH),
       ],
