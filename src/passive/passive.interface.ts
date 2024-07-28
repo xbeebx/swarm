@@ -2,6 +2,7 @@ export interface Passive {
   name: PassiveTypes;
   icon: string;
   amountPerLevel: string;
+  availableByDefault: boolean;
 }
 
 export const ABILITY_HASTE = 'Ability Haste';
@@ -16,6 +17,8 @@ export const HEALTH_REGENERATION = 'Health Regeneration';
 export const PICKUP_RADIUS = 'Pickup Radius';
 export const ARMOR = 'Armor';
 export const EXP = 'EXP';
+export const GAIN_GOLD = 'Gain 25 Gold';
+export const HEAL_HP = 'Heal 25% HP';
 
 export const PASSIVES = [
   ABILITY_HASTE,
@@ -30,6 +33,8 @@ export const PASSIVES = [
   PICKUP_RADIUS,
   ARMOR,
   EXP,
+  GAIN_GOLD,
+  HEAL_HP,
 ] as const;
 
 export type PassiveTypes = (typeof PASSIVES)[number];
