@@ -1,4 +1,4 @@
-@import "./champion-article.scss";
+@import "./components/champion-article/champion-article.component.scss";
 
 body {
   margin: 0;
@@ -61,7 +61,7 @@ body {
   }
 }
 
-.item_with_image_round {
+.item_with_image {
   display: inline-block;
   text-decoration: none;
 
@@ -69,9 +69,23 @@ body {
     margin-right: 8px;
     height: 30px;
     width: 30px;
-    border-radius: 50px;
-    border: 1px solid #3273fa;
     vertical-align: bottom;
+  }
+}
+
+.image_round_with_border {
+  display: inline-block;
+  text-decoration: none;
+
+  img {
+    border-radius: 50%;
+    border: 1px solid;
+  }
+}
+
+.weapon {
+  img {
+    border-color: #3273fa;
   }
 
   span {
@@ -79,19 +93,29 @@ body {
   }
 }
 
-.upgrade_with_image_round {
-  display: inline-block;
-  text-decoration: none;
+.upgrade {
+  span {
+    color: #36bda8;
+  }
+}
 
+.ability {
   img {
-    margin-right: 8px;
-    height: 30px;
-    width: 30px;
-    vertical-align: bottom;
+    border-color: #3273fa;
   }
 
   span {
-    color: #36bda8;
+    color: #3273fa;
+  }
+}
+
+.champion {
+  img {
+    border-color: #3273fa;
+  }
+
+  span {
+    color: #3273fa;
   }
 }
 

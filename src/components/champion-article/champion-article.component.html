@@ -1,11 +1,39 @@
 <div class="article">
-  <!-- header -->
+  <ng-container *ngTemplateOutlet="template_header"></ng-container>
+  <!-- objectives -->
+  <ng-container *ngIf="objective.texts.length > 0">
+    <ng-container *ngTemplateOutlet="template_objectives"></ng-container>
+  </ng-container>
+  <!-- augments -->
+  <ng-container *ngIf="augments.length > 0">
+    <ng-container *ngTemplateOutlet="template_augments"></ng-container>
+  </ng-container>
+  <!-- itembuilds -->
+  <ng-container *ngIf="itemBuilds.length > 0">
+    <ng-container *ngTemplateOutlet="template_itembuilds"></ng-container>
+  </ng-container>
+</div>
+
+<ng-template #template_header>
   <div class="header">
     <img class="header__image" [src]="champ.icon" [alt]="champ.name" />
-    <span class="header__text">Jinx</span>
+    <span class="header__text">{{ champ.name }}</span>
   </div>
+</ng-template>
 
-  <!-- objectives -->
+<ng-template #template_item_with_image let-item>
+  <a
+    *ngIf="item"
+    class="item_with_image image_round_with_border"
+    [class.weapon]="isWeapon(item)"
+  >
+    <img [src]="item.item.icon" [alt]="item.item.name" /><span>{{
+      item.item.name
+    }}</span>
+  </a>
+</ng-template>
+
+<ng-template #template_objectives>
   <div class="subheader">
     <i class="subheader__image ri-award-fill"></i>
     <span class="subheader__text">Objectives</span>
@@ -14,18 +42,36 @@
   <div class="container-wrapper-vertical">
     <div class="box objective">
       <p>
-        Reach level 25 with Jinx to unlock the
-        <a class="item_with_image_round">
-          <img [src]="vortexGlove.icon" [alt]="vortexGlove.name" /><span>{{
-            vortexGlove.name
-          }}</span>
-        </a>
-        weapon.
+        @for (text of objective.texts; track text; let i = $index) {
+        <ng-template #defaultText let-text> {{ text }}</ng-template>
+
+        <ng-container *ngIf="!matchRegex(text, '\\$\\d+')">
+          <ng-container
+            *ngTemplateOutlet="
+              defaultText;
+              context: {
+                $implicit: text
+              }
+            "
+          ></ng-container>
+        </ng-container>
+        <ng-container *ngIf="matchRegex(text, '\\$\\d+')">
+          <ng-container
+            *ngTemplateOutlet="
+              template_item_with_image;
+              context: {
+                $implicit: objective.items[+text.substring(1)]
+              }
+            "
+          ></ng-container>
+        </ng-container>
+        }
       </p>
     </div>
   </div>
+</ng-template>
 
-  <!-- recommended augments -->
+<ng-template #template_augments>
   <div class="subheader">
     <i class="subheader__image ri-flashlight-fill"></i>
     <span class="subheader__text">Recommended Yuumi augments</span>
@@ -42,14 +88,14 @@
       </div>
     </div>
   </div>
+</ng-template>
 
-  <!-- subheader -->
+<ng-template #template_itembuilds>
   <div class="subheader">
     <i class="subheader__image ri-book-shelf-fill"></i>
     <span class="subheader__text">Builds</span>
   </div>
 
-  <!-- itembuilds -->
   <div class="container-wrapper-vertical">
     <div class="itembuild" *ngFor="let itemBuild of itemBuilds">
       <div class="itembuild__top">
@@ -110,6 +156,7 @@
           </div>
         </div>
       </div>
+      <!-- passives on the bottom -->
       <div class="itembuild__bottom">
         <div class="itembuild__bottom__title">Passives</div>
         <div class="itembuild__bottom__content">
@@ -128,4 +175,4 @@
       </div>
     </div>
   </div>
-</div>
+</ng-template>
