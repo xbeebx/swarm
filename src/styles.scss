@@ -93,9 +93,20 @@ body {
   }
 }
 
-.upgrade {
+.passive {
+  img {
+    border-color: #36bda8;
+  }
+
   span {
     color: #36bda8;
+  }
+}
+
+.upgrade {
+  span {
+    // TODO: change color
+    color: yellow;
   }
 }
 

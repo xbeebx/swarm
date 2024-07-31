@@ -1,19 +1,55 @@
 <div class="article">
   <ng-container *ngTemplateOutlet="template_header"></ng-container>
+  <!-- tip -->
+  @if(tip.texts.length > 0) {
+  <ng-container
+    *ngTemplateOutlet="
+      template_textbox_with_items;
+      context: {
+        subheader: 'Tip',
+        subheaderIcon: 'ri-lightbulb-fill',
+        content: tip
+      }
+    "
+  ></ng-container>
+  }
+  <!-- unlock -->
+  @if(unlock.texts.length > 0) {
+  <ng-container
+    *ngTemplateOutlet="
+      template_textbox_with_items;
+      context: {
+        subheader: 'How to unlock ' + champ.name,
+        subheaderIcon: 'ri-lock-unlock-fill',
+        content: unlock
+      }
+    "
+  ></ng-container>
+  }
   <!-- objectives -->
-  <ng-container *ngIf="objective.texts.length > 0">
-    <ng-container *ngTemplateOutlet="template_objectives"></ng-container>
-  </ng-container>
+  @if(objective.texts.length > 0) {
+  <ng-container
+    *ngTemplateOutlet="
+      template_textbox_with_items;
+      context: {
+        subheader: 'Objectives',
+        subheaderIcon: 'ri-award-fill',
+        content: objective
+      }
+    "
+  ></ng-container>
+  }
   <!-- augments -->
-  <ng-container *ngIf="augments.length > 0">
-    <ng-container *ngTemplateOutlet="template_augments"></ng-container>
-  </ng-container>
+  @if(augments.length > 0) {
+  <ng-container *ngTemplateOutlet="template_augments"></ng-container>
+  }
   <!-- itembuilds -->
-  <ng-container *ngIf="itemBuilds.length > 0">
-    <ng-container *ngTemplateOutlet="template_itembuilds"></ng-container>
-  </ng-container>
+  @if(itemBuilds.length > 0) {
+  <ng-container *ngTemplateOutlet="template_itembuilds"></ng-container>
+  }
 </div>
 
+<!-- header -->
 <ng-template #template_header>
   <div class="header">
     <img class="header__image" [src]="champ.icon" [alt]="champ.name" />
@@ -21,11 +57,25 @@
   </div>
 </ng-template>
 
+<!-- subheader -->
+<ng-template #template_subheader let-text="text" let-icon="icon">
+  <div class="subheader">
+    <i class="subheader__image" [ngClass]="icon"></i>
+    <span class="subheader__text">{{ text }}</span>
+  </div>
+</ng-template>
+
+<!-- item with image -->
 <ng-template #template_item_with_image let-item>
   <a
-    *ngIf="item"
-    class="item_with_image image_round_with_border"
+    class="item_with_image"
+    [class.image_round_with_border]="
+      isWeapon(item) || isAbility(item) || isChampion(item) || isPassive(item)
+    "
     [class.weapon]="isWeapon(item)"
+    [class.ability]="isAbility(item)"
+    [class.champion]="isChampion(item)"
+    [class.passive]="isPassive(item)"
   >
     <img [src]="item.item.icon" [alt]="item.item.name" /><span>{{
       item.item.name
@@ -33,49 +83,67 @@
   </a>
 </ng-template>
 
-<ng-template #template_objectives>
-  <div class="subheader">
-    <i class="subheader__image ri-award-fill"></i>
-    <span class="subheader__text">Objectives</span>
-  </div>
+<!-- textbox with items -->
+<ng-template
+  #template_textbox_with_items
+  let-subheader="subheader"
+  let-subeaderIcon="subheaderIcon"
+  let-content="content"
+>
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: subheader,
+        icon: subeaderIcon
+      }
+    "
+  ></ng-container>
 
   <div class="container-wrapper-vertical">
-    <div class="box objective">
+    <div class="box textbox">
       <p>
-        @for (text of objective.texts; track text; let i = $index) {
-        <ng-template #defaultText let-text> {{ text }}</ng-template>
+        @for (text of content.texts; track text; let i = $index) {
+        <ng-template #defaultText let-text>{{ text }}</ng-template>
 
-        <ng-container *ngIf="!matchRegex(text, '\\$\\d+')">
-          <ng-container
-            *ngTemplateOutlet="
-              defaultText;
-              context: {
-                $implicit: text
-              }
-            "
-          ></ng-container>
-        </ng-container>
-        <ng-container *ngIf="matchRegex(text, '\\$\\d+')">
-          <ng-container
-            *ngTemplateOutlet="
-              template_item_with_image;
-              context: {
-                $implicit: objective.items[+text.substring(1)]
-              }
-            "
-          ></ng-container>
-        </ng-container>
+        <!-- normal text -->
+        @if(!matchRegex(text, '\\$\\d+')) {
+        <ng-container
+          *ngTemplateOutlet="
+            defaultText;
+            context: {
+              $implicit: text
+            }
+          "
+        ></ng-container>
         }
+        <!-- item with image -->
+        @if(matchRegex(text, '\\$\\d+')) {
+        <ng-container
+          *ngTemplateOutlet="
+            template_item_with_image;
+            context: {
+              $implicit: content.items[+text.substring(1)]
+            }
+          "
+        ></ng-container>
+        } }
       </p>
     </div>
   </div>
 </ng-template>
 
+<!-- augments -->
 <ng-template #template_augments>
-  <div class="subheader">
-    <i class="subheader__image ri-flashlight-fill"></i>
-    <span class="subheader__text">Recommended Yuumi augments</span>
-  </div>
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Recommended Yuumi augments',
+        icon: 'ri-flashlight-fill'
+      }
+    "
+  ></ng-container>
 
   <div class="container-wrapper-vertical">
     <div class="box augment" *ngFor="let augment of augments">
@@ -90,11 +158,17 @@
   </div>
 </ng-template>
 
+<!-- itembuilds -->
 <ng-template #template_itembuilds>
-  <div class="subheader">
-    <i class="subheader__image ri-book-shelf-fill"></i>
-    <span class="subheader__text">Builds</span>
-  </div>
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Builds',
+        icon: 'ri-book-shelf-fill'
+      }
+    "
+  ></ng-container>
 
   <div class="container-wrapper-vertical">
     <div class="itembuild" *ngFor="let itemBuild of itemBuilds">

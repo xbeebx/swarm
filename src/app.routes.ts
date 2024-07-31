@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
 import { TierlistComponent } from './components/tierlist/tierlist.component';
-import { JinxComponent } from './components/jinx/jinx.component';
-import { SeraphineComponent } from './components/seraphine/seraphine.component';
-import { IllaoiComponent } from './components/illaoi/illaoi.component';
-import { LeonaComponent } from './components/leona/leona.component';
-import { YasuoComponent } from './components/yasuo/yasuo.component';
-import { RivenComponent } from './components/riven/riven.component';
-import { XayahComponent } from './components/xayah/xayah.component';
-import { BriarComponent } from './components/briar/briar.component';
-import { AuroraComponent } from './components/aurora/aurora.component';
+import { JinxComponent } from './components/jinx.component';
+import { SeraphineComponent } from './components/seraphine.component';
+import { IllaoiComponent } from './components/illaoi.component';
+import { LeonaComponent } from './components/leona.component';
+import { YasuoComponent } from './components/yasuo.component';
+import { RivenComponent } from './components/riven.component';
+import { XayahComponent } from './components/xayah.component';
+import { BriarComponent } from './components/briar.component';
+import { AuroraComponent } from './components/aurora.component';
 
 export const routes: Routes = [
   { path: 'tierlist', component: TierlistComponent },

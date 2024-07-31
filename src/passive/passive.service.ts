@@ -7,7 +7,6 @@ import {
   CRITICAL_CHANCE,
   DAMAGE,
   DURATION,
-  EXP as EXP,
   ABILITY_HASTE,
   HEALTH_REGENERATION,
   MAX_HEALTH,
@@ -16,6 +15,7 @@ import {
   PROJECTILE_COUNT,
   GAIN_GOLD,
   HEAL_HP,
+  EXP,
 } from './passive.interface';
 
 const PASSIVE_ASSETS_FOLDER = 'assets/passives/';
@@ -24,7 +24,7 @@ const PASSIVE_ASSETS_FOLDER = 'assets/passives/';
   providedIn: 'root',
 })
 export class PassiveService {
-  #attributes: Passive[] = [
+  #passives: Passive[] = [
     {
       name: ABILITY_HASTE,
       icon: PASSIVE_ASSETS_FOLDER + 'ability_haste.png',
@@ -111,11 +111,11 @@ export class PassiveService {
     },
   ];
 
-  getAttributes = () => {
-    return this.#attributes;
+  getPassives = () => {
+    return this.#passives;
   };
 
-  getAttributeByName = (name: PassiveTypes) => {
-    return this.#attributes.filter((a) => a.name === name)[0];
+  getPassiveByName = (name: PassiveTypes) => {
+    return this.#passives.filter((p) => p.name === name)[0];
   };
 }
