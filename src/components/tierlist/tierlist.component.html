@@ -6,13 +6,22 @@
   </div>
 
   <!-- champion tier list -->
-  <div class="subheader">
-    <i class="subheader__image ri-team-fill"></i>
-    <span class="subheader__text">Champion tier list</span>
-  </div>
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Champion tier list',
+        icon: 'ri-team-fill',
+        subheaderAnimationDelay: 0
+      }
+    "
+  ></ng-container>
 
   <div class="container-wrapper-vertical">
-    <div class="objective">
+    <div
+      class="textbox flyinAnimation"
+      [ngStyle]="{ 'animation-delay': 0.1 + 's' }"
+    >
       <p>
         Strongest champions based on unique weapon, damage, and solo-play
         potential.
@@ -47,9 +56,10 @@
   </div>
 
   <div class="container-wrapper-vertical" [ngStyle]="{ gap: '12px' }">
+    @for (tier of tierService.getTiers(); track tier; let i = $index) {
     <div
-      class="tierlist__container"
-      *ngFor="let tier of tierService.getTiers()"
+      class="tierlist__container flyinAnimation"
+      [ngStyle]="{ 'animation-delay': 0.2 + i * 0.1 + 's' }"
     >
       <div
         class="tierlist__container__label"
@@ -59,10 +69,9 @@
       </div>
       <div class="tierlist__container__content">
         <!-- champions -->
-        <div
-          class="tierlist__container__content__item"
-          *ngFor="let champ of championService.getChampionsByTier(tier.name)"
-        >
+        @for (champ of championService.getChampionsByTier(tier.name); track
+        champ) {
+        <div class="tierlist__container__content__item">
           <a [href]="navigationService.getItemByName(champ.name).link">
             <img
               [src]="champ.icon"
@@ -72,26 +81,44 @@
             <span>{{ champ.name }}</span>
           </a>
         </div>
+        }
       </div>
     </div>
+    }
   </div>
 
   <!-- weapons tier list -->
-  <div class="subheader">
-    <i class="subheader__image ri-sword-fill"></i>
-    <span class="subheader__text">Weapons tier list</span>
-  </div>
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Weapons tier list',
+        icon: 'ri-sword-fill',
+        subheaderAnimationDelay: 0.2 + tierService.getTiers().length * 0.1
+      }
+    "
+  ></ng-container>
+
   <!-- description -->
   <div class="container-wrapper-vertical">
-    <p class="tierlist-desc">
+    <p
+      class="tierlist-desc flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.2 + tierService.getTiers().length * 0.1 + 0.1 + 's'
+      }"
+    >
       Strongest swarm weapons across all champions and playstyles.
     </p>
   </div>
 
   <div class="container-wrapper-vertical" [ngStyle]="{ gap: '12px' }">
+    @for (tier of tierService.getTiers(); track tier; let i = $index) {
     <div
-      class="tierlist__container"
-      *ngFor="let tier of tierService.getTiers()"
+      class="tierlist__container flyinAnimation"
+      [ngStyle]="{
+        'animation-delay':
+          0.2 + tierService.getTiers().length * 0.1 + 0.2 + i * 0.1 + 's'
+      }"
     >
       <div
         class="tierlist__container__label"
@@ -101,10 +128,9 @@
       </div>
       <div class="tierlist__container__content">
         <!-- weapons -->
-        <div
-          class="tierlist__container__content__item"
-          *ngFor="let weapon of weaponsService.getWeaponsByTier(tier.name)"
-        >
+        @for (weapon of weaponsService.getWeaponsByTier(tier.name); track
+        weapon) {
+        <div class="tierlist__container__content__item">
           <a>
             <img
               [src]="weapon.icon"
@@ -114,7 +140,27 @@
             <span>{{ weapon.name }}</span>
           </a>
         </div>
+        }
       </div>
     </div>
+    }
   </div>
 </div>
+
+<!-- subheader -->
+<ng-template
+  #template_subheader
+  let-text="text"
+  let-icon="icon"
+  let-subheaderAnimationDelay="subheaderAnimationDelay"
+>
+  <div
+    class="subheader flyinAnimation"
+    [ngStyle]="{
+      'animation-delay': subheaderAnimationDelay + 's'
+    }"
+  >
+    <i class="subheader__image" [ngClass]="icon"></i>
+    <span class="subheader__text">{{ text }}</span>
+  </div>
+</ng-template>

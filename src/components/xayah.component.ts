@@ -1,4 +1,10 @@
-import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import {
+  NgClass,
+  NgFor,
+  NgIf,
+  NgStyle,
+  NgTemplateOutlet,
+} from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { XAYAH } from '../champion/champion.interface';
@@ -7,7 +13,7 @@ import { ChampionArticleComponent } from './champion-article/champion-article.co
 @Component({
   selector: 'swarm-xayah',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass],
+  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass, NgStyle],
   templateUrl: './champion-article/champion-article.component.html',
   styleUrl: './champion-article/champion-article.component.scss',
 })

@@ -1,4 +1,10 @@
-import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import {
+  NgClass,
+  NgFor,
+  NgIf,
+  NgStyle,
+  NgTemplateOutlet,
+} from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
@@ -14,7 +20,7 @@ import { Item } from './champion-article/champion-article.interface';
 @Component({
   selector: 'swarm-jinx',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass],
+  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass, NgStyle],
   templateUrl: './champion-article/champion-article.component.html',
   styleUrl: './champion-article/champion-article.component.scss',
   encapsulation: ViewEncapsulation.None,

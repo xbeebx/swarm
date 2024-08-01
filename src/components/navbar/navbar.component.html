@@ -1,7 +1,7 @@
 <div class="navbar__container">
+  @for (item of navigationService.getItems(); track item) {
   <div
     class="navbar__container__wrapper"
-    *ngFor="let item of navigationService.getItems()"
     (click)="this.navigate(item.link)"
     [class.selected]="this.isSelected(item.link)"
     tabindex="0"
@@ -17,8 +17,9 @@
       <span [class.selected]="this.isSelected(item.link)">{{ item.name }}</span>
     </div>
     <div
-      *ngIf="this.isSelected(item.link)"
       class="navbar__container__wrapper__selectedIndicator"
+      [class.selected]="this.isSelected(item.link)"
     ></div>
   </div>
+  }
 </div>

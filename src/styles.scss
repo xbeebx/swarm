@@ -139,3 +139,23 @@ body {
   padding: 24px;
   gap: 18px;
 }
+
+.flyinAnimation {
+  animation: flyInAnimation ease-in-out 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+@keyframes flyInAnimation {
+  0% {
+    margin-top: 20px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

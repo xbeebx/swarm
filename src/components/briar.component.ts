@@ -1,4 +1,10 @@
-import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import {
+  NgClass,
+  NgFor,
+  NgIf,
+  NgStyle,
+  NgTemplateOutlet,
+} from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BRIAR_ULTIMATE } from '../ability/ability.interface';
@@ -10,7 +16,7 @@ import { Item } from './champion-article/champion-article.interface';
 @Component({
   selector: 'swarm-briar',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass],
+  imports: [RouterOutlet, NgFor, NgTemplateOutlet, NgIf, NgClass, NgStyle],
   templateUrl: './champion-article/champion-article.component.html',
   styleUrl: './champion-article/champion-article.component.scss',
 })
@@ -49,10 +55,12 @@ export class BriarComponent extends ChampionArticleComponent {
       {
         item: this.championService.getChampionByName(JINX),
         type: 'champion',
+        link: this.navigationService.getItemByName(JINX).link,
       } as Item,
       {
         item: this.championService.getChampionByName(LEONA),
         type: 'champion',
+        link: this.navigationService.getItemByName(LEONA).link,
       } as Item,
     ],
   };
