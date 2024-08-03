@@ -15,6 +15,7 @@ import {
 import { ChampionService } from '../../champion/champion.service';
 
 export const TIERLIST = 'Tier list';
+export const DIFFICULTIES = 'Difficulties';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,11 @@ export class NavigationService {
 
   #items: NavbarItem[] = [
     { name: TIERLIST, link: '/tierlist', icon: 'assets/tierlist.png' },
+    {
+      name: DIFFICULTIES,
+      link: '/difficulties',
+      icon: 'assets/difficulties.png',
+    },
     {
       name: JINX,
       link: '/jinx',

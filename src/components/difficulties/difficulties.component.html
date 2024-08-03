@@ -1,0 +1,124 @@
+<div class="article">
+  <!-- header -->
+  <div class="header">
+    <img class="header__image" src="assets/difficulties.png" alt="Tier list" />
+    <span class="header__text">Difficulties</span>
+  </div>
+
+  <!-- champion tier list -->
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Modes',
+        icon: 'ri-stairs-fill',
+        subheaderAnimationDelay: 0
+      }
+    "
+  ></ng-container>
+
+  <div class="container-wrapper-vertical">
+    <div
+      class="box textbox flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.1 + 's'
+      }"
+    >
+      <p>
+        The game can be played in three different modes, each unlocking new
+        progression boards and escalating the difficulty.
+      </p>
+    </div>
+    <div
+      class="box tablebox flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.2 + 's'
+      }"
+    >
+      <!-- table -->
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="Parameter">
+          <th mat-header-cell *matHeaderCellDef customTooltip content>
+            Parameter
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.name }}
+          </td>
+        </ng-container>
+
+        <ng-container [matColumnDef]="STORY">
+          <th mat-header-cell *matHeaderCellDef>
+            <div class="tableheader_cell_with_icon">
+              <img
+                [src]="difficultService.getDifficultyByName(STORY).icon"
+                [alt]="STORY"
+              />
+              <p>{{ STORY }}</p>
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.values[STORY] }}
+          </td>
+        </ng-container>
+
+        <ng-container [matColumnDef]="HARD">
+          <th mat-header-cell *matHeaderCellDef>
+            <div class="tableheader_cell_with_icon">
+              <img
+                [src]="difficultService.getDifficultyByName(HARD).icon"
+                [alt]="HARD"
+              />{{ HARD }}
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.values[HARD] }}</td>
+        </ng-container>
+
+        <ng-container [matColumnDef]="EXTREME">
+          <th mat-header-cell *matHeaderCellDef>
+            <div class="tableheader_cell_with_icon">
+              <img
+                [src]="difficultService.getDifficultyByName(EXTREME).icon"
+                [alt]="EXTREME"
+              />{{ EXTREME }}
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.values[EXTREME] }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <ul>
+        <li>Enemy mechanics such as ability rates and speeds vary</li>
+        <li>
+          Number of enemies spawned in the current map's waves and their number
+          of attacks increases with more players in the game
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- <div>
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div> -->
+</div>
+
+<!-- subheader -->
+<ng-template
+  #template_subheader
+  let-text="text"
+  let-icon="icon"
+  let-subheaderAnimationDelay="subheaderAnimationDelay"
+>
+  <div
+    class="subheader flyinAnimation"
+    [ngStyle]="{
+      'animation-delay': subheaderAnimationDelay + 's'
+    }"
+  >
+    <i class="subheader__image" [ngClass]="icon"></i>
+    <span class="subheader__text">{{ text }}</span>
+  </div>
+</ng-template>

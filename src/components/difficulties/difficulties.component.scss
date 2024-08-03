@@ -1,0 +1,43 @@
+tr {
+  th {
+    color: #bbbedb;
+    border-color: rgba(#bbbedb, 0.12);
+    font-weight: 700;
+
+    &:not(:first-child) {
+      .tableheader_cell_with_icon {
+        display: flex;
+        align-items: center;
+        color: #cdbe91;
+        gap: 8px;
+
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+  td {
+    color: #bbbedb;
+    border-color: rgba(#bbbedb, 0.12);
+
+    &:first-child {
+      color: #ff9900;
+    }
+  }
+}
+
+.tablebox {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    color: #bbbedb;
+    padding-left: 20px;
+
+    li:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+}

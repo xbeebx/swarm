@@ -9,9 +9,11 @@ import { RivenComponent } from './components/riven.component';
 import { XayahComponent } from './components/xayah.component';
 import { BriarComponent } from './components/briar.component';
 import { AuroraComponent } from './components/aurora.component';
+import { DifficultiesComponent } from './components/difficulties/difficulties.component';
 
 export const routes: Routes = [
   { path: 'tierlist', component: TierlistComponent },
+  { path: 'difficulties', component: DifficultiesComponent },
   { path: 'jinx', component: JinxComponent },
   { path: 'seraphine', component: SeraphineComponent },
   { path: 'illaoi', component: IllaoiComponent },
