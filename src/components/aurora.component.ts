@@ -11,6 +11,7 @@ import { AURORA } from '../champion/champion.interface';
 import { THE_ANNIHILATOR } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
+import { HARD } from '../difficulty/difficuty.interface';
 
 @Component({
   selector: 'swarm-aurora',
@@ -23,8 +24,13 @@ export class AuroraComponent extends ChampionArticleComponent {
   champ = this.championService.getChampionByName(AURORA);
 
   override unlock = {
-    texts: ['On Hard difficulty, defeat 25 minibosses.'],
-    items: [],
+    texts: ['On ', '$0', ' difficulty, defeat 25 minibosses.'],
+    items: [
+      {
+        item: this.difficultyService.getDifficultyByName(HARD),
+        type: 'difficulty',
+      } as Item,
+    ],
   };
 
   override objective = {

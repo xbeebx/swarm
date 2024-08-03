@@ -11,6 +11,7 @@ import { provideItemBuilds } from './item-build';
 import { provideAugments } from './augment';
 import { providePassives } from './passive';
 import { provideUpgrades } from './upgrades';
+import { provideDifficulties } from './difficulty';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,5 +25,6 @@ export const appConfig: ApplicationConfig = {
     providePassives(),
     provideUpgrades(),
     provideAnimations(),
+    provideDifficulties(),
   ],
 };

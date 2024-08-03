@@ -18,6 +18,7 @@ import { RIVEN } from '../champion/champion.interface';
 import { PAW_PRINT_POISONER } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
+import { HARD } from '../difficulty/difficuty.interface';
 
 @Component({
   selector: 'swarm-riven',
@@ -31,9 +32,16 @@ export class RivenComponent extends ChampionArticleComponent {
 
   override unlock = {
     texts: [
-      `On Hard difficulty, defeat Rek'Sai on Warehouse District (1st map).`,
+      'On ',
+      '$0',
+      ` difficulty, defeat Rek'Sai on Warehouse District (1st map).`,
     ],
-    items: [],
+    items: [
+      {
+        item: this.difficultyService.getDifficultyByName(HARD),
+        type: 'difficulty',
+      } as Item,
+    ],
   };
 
   override objective = {
