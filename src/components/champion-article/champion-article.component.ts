@@ -7,12 +7,13 @@ import { ChampionService } from '../../champion/champion.service';
 import { ItemBuild } from '../../item-build/item-build.interface';
 import { ItemBuildService } from '../../item-build/item-build.service';
 import { PassiveService } from '../../passive/passive.service';
-import { UpgradeService } from '../../upgrades/upgrade.service';
+import { UpgradeService } from '../../upgrade/upgrade.service';
 import { WeaponService } from '../../weapon/weapon.service';
 import { Item, TextsWithItems } from './champion-article.interface';
 import { NavigationService } from '../navbar/navbar.service';
 import { AbilityService } from '../../ability/ability.service';
 import { DifficultyService } from '../../difficulty/difficulty.service';
+import { MapService } from '../../map/map.service';
 
 @Component({
   selector: 'swarm-champion-article',
@@ -32,6 +33,7 @@ export abstract class ChampionArticleComponent {
   navigationService = inject(NavigationService);
   abilityService = inject(AbilityService);
   difficultyService = inject(DifficultyService);
+  mapService = inject(MapService);
 
   abstract champ: Champion;
   tip: TextsWithItems = {
@@ -83,5 +85,8 @@ export abstract class ChampionArticleComponent {
   };
   isDifficulty = (item: Item) => {
     return item.type === 'difficulty';
+  };
+  isMap = (item: Item) => {
+    return item.type === 'map';
   };
 }

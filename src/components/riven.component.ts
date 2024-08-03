@@ -19,6 +19,7 @@ import { PAW_PRINT_POISONER } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
 import { HARD } from '../difficulty/difficuty.interface';
+import { WAREHOUSE_DISTRICT } from '../map/map.interface';
 
 @Component({
   selector: 'swarm-riven',
@@ -34,12 +35,18 @@ export class RivenComponent extends ChampionArticleComponent {
     texts: [
       'On ',
       '$0',
-      ` difficulty, defeat Rek'Sai on Warehouse District (1st map).`,
+      ` difficulty, defeat Rek'Sai on `,
+      '$1',
+      ' (1st map).',
     ],
     items: [
       {
         item: this.difficultyService.getDifficultyByName(HARD),
         type: 'difficulty',
+      } as Item,
+      {
+        item: this.mapService.getMapByName(WAREHOUSE_DISTRICT),
+        type: 'map',
       } as Item,
     ],
   };

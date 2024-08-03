@@ -12,6 +12,7 @@ import { BRIAR, JINX, LEONA } from '../champion/champion.interface';
 import { ANTI_SHAK_SEA_MINE } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
+import { THE_OUTSKIRTS } from '../map/map.interface';
 
 @Component({
   selector: 'swarm-briar',
@@ -45,13 +46,19 @@ export class BriarComponent extends ChampionArticleComponent {
 
   override unlock = {
     texts: [
-      'Defeat Briar on The Outskirts map (2nd map). ',
+      'Defeat Briar on ',
       '$0',
-      ' and ',
+      ' (2nd map). ',
       '$1',
+      ' and ',
+      '$2',
       ' are both strong on this map.',
     ],
     items: [
+      {
+        item: this.mapService.getMapByName(THE_OUTSKIRTS),
+        type: 'map',
+      } as Item,
       {
         item: this.championService.getChampionByName(JINX),
         type: 'champion',

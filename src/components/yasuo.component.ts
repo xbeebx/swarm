@@ -11,6 +11,7 @@ import { BRIAR, YASUO } from '../champion/champion.interface';
 import { BATTLE_BUNNY_CROWBOW } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
+import { SUBTERRANEAN_LAB } from '../map/map.interface';
 
 @Component({
   selector: 'swarm-yasuo',
@@ -24,11 +25,17 @@ export class YasuoComponent extends ChampionArticleComponent {
 
   override unlock = {
     texts: [
-      `Defeat Bel'Veth on Subterranean Lab (3rd map). `,
+      `Defeat Bel'Veth on `,
       '$0',
+      ' (3rd map). ',
+      '$1',
       ' is the best champion to use on this map for new players.',
     ],
     items: [
+      {
+        item: this.mapService.getMapByName(SUBTERRANEAN_LAB),
+        type: 'map',
+      } as Item,
       {
         item: this.championService.getChampionByName(BRIAR),
         type: 'champion',

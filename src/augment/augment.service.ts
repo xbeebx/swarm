@@ -59,7 +59,7 @@ export class AugmentService {
     return this.#augments;
   };
 
-  getAugmentByName = (name: AugmentTypes) => {
-    return this.#augments.filter((a) => a.name === name)[0];
+  getAugmentByName = (augment: AugmentTypes) => {
+    return this.#augments.filter((a) => a.name === augment)[0];
   };
 }

@@ -126,6 +126,6 @@ export class AbilityService {
     return this.#abilities;
   };
   getAbilityByName = (ability: string) => {
-    return this.#abilities.filter((w) => w.name === ability)[0];
+    return this.#abilities.filter((a) => a.name === ability)[0];
   };
 }

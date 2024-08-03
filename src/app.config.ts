@@ -10,8 +10,9 @@ import { provideAbilities } from './ability';
 import { provideItemBuilds } from './item-build';
 import { provideAugments } from './augment';
 import { providePassives } from './passive';
-import { provideUpgrades } from './upgrades';
+import { provideUpgrades } from './upgrade';
 import { provideDifficulties } from './difficulty';
+import { provideMaps } from './map';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,5 +27,6 @@ export const appConfig: ApplicationConfig = {
     provideUpgrades(),
     provideAnimations(),
     provideDifficulties(),
+    provideMaps(),
   ],
 };

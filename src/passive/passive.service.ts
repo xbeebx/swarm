@@ -115,7 +115,7 @@ export class PassiveService {
     return this.#passives;
   };
 
-  getPassiveByName = (name: PassiveTypes) => {
-    return this.#passives.filter((p) => p.name === name)[0];
+  getPassiveByName = (passive: PassiveTypes) => {
+    return this.#passives.filter((p) => p.name === passive)[0];
   };
 }

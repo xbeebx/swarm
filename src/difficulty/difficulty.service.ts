@@ -32,7 +32,7 @@ export class DifficultyService {
     return this.#difficulties;
   };
 
-  getDifficultyByName = (name: DifficultyTypes) => {
-    return this.#difficulties.filter((d) => d.name === name)[0];
+  getDifficultyByName = (difficulty: DifficultyTypes) => {
+    return this.#difficulties.filter((d) => d.name === difficulty)[0];
   };
 }
