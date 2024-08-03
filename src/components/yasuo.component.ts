@@ -12,6 +12,7 @@ import { BATTLE_BUNNY_CROWBOW } from '../weapon/weapon.interface';
 import { ChampionArticleComponent } from './champion-article/champion-article.component';
 import { Item } from './champion-article/champion-article.interface';
 import { SUBTERRANEAN_LAB } from '../map/map.interface';
+import { BELVETH } from '../boss/boss.interface';
 
 @Component({
   selector: 'swarm-yasuo',
@@ -25,13 +26,19 @@ export class YasuoComponent extends ChampionArticleComponent {
 
   override unlock = {
     texts: [
-      `Defeat Bel'Veth on `,
+      'Defeat ',
       '$0',
-      ' (3rd map). ',
+      ' on ',
       '$1',
+      ' (3rd map). ',
+      '$2',
       ' is the best champion to use on this map for new players.',
     ],
     items: [
+      {
+        item: this.bossService.getBossByName(BELVETH),
+        type: 'boss',
+      } as Item,
       {
         item: this.mapService.getMapByName(SUBTERRANEAN_LAB),
         type: 'map',

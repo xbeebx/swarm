@@ -20,6 +20,7 @@ import { ChampionArticleComponent } from './champion-article/champion-article.co
 import { Item } from './champion-article/champion-article.interface';
 import { HARD } from '../difficulty/difficuty.interface';
 import { WAREHOUSE_DISTRICT } from '../map/map.interface';
+import { REKSAI } from '../boss/boss.interface';
 
 @Component({
   selector: 'swarm-riven',
@@ -35,14 +36,20 @@ export class RivenComponent extends ChampionArticleComponent {
     texts: [
       'On ',
       '$0',
-      ` difficulty, defeat Rek'Sai on `,
+      ' difficulty, defeat ',
       '$1',
+      ' on ',
+      '$2',
       ' (1st map).',
     ],
     items: [
       {
         item: this.difficultyService.getDifficultyByName(HARD),
         type: 'difficulty',
+      } as Item,
+      {
+        item: this.bossService.getBossByName(REKSAI),
+        type: 'boss',
       } as Item,
       {
         item: this.mapService.getMapByName(WAREHOUSE_DISTRICT),

@@ -81,7 +81,11 @@
       class="item_with_image"
       [attr.href]="item.link ? item.link : null"
       [class.image_round_with_border]="
-        isWeapon(item) || isAbility(item) || isChampion(item) || isPassive(item)
+        isWeapon(item) ||
+        isAbility(item) ||
+        isChampion(item) ||
+        isPassive(item) ||
+        isBoss(item)
       "
       [class.weapon]="isWeapon(item)"
       [class.ability]="isAbility(item)"
@@ -89,6 +93,7 @@
       [class.passive]="isPassive(item)"
       [class.difficulty]="isDifficulty(item)"
       [class.map]="isMap(item)"
+      [class.boss]="isBoss(item)"
     >
       <img [src]="item.item.icon" [alt]="item.item.name" /><span>{{
         item.item.name

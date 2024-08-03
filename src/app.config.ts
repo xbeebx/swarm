@@ -13,6 +13,7 @@ import { providePassives } from './passive';
 import { provideUpgrades } from './upgrade';
 import { provideDifficulties } from './difficulty';
 import { provideMaps } from './map';
+import { provideBosses } from './boss';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,5 +29,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideDifficulties(),
     provideMaps(),
+    provideBosses(),
   ],
 };

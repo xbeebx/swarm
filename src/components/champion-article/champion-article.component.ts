@@ -14,6 +14,7 @@ import { NavigationService } from '../navbar/navbar.service';
 import { AbilityService } from '../../ability/ability.service';
 import { DifficultyService } from '../../difficulty/difficulty.service';
 import { MapService } from '../../map/map.service';
+import { BossService } from '../../boss/boss.service';
 
 @Component({
   selector: 'swarm-champion-article',
@@ -34,6 +35,7 @@ export abstract class ChampionArticleComponent {
   abilityService = inject(AbilityService);
   difficultyService = inject(DifficultyService);
   mapService = inject(MapService);
+  bossService = inject(BossService);
 
   abstract champ: Champion;
   tip: TextsWithItems = {
@@ -88,5 +90,8 @@ export abstract class ChampionArticleComponent {
   };
   isMap = (item: Item) => {
     return item.type === 'map';
+  };
+  isBoss = (item: Item) => {
+    return item.type === 'boss';
   };
 }
