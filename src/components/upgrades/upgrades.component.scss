@@ -54,10 +54,12 @@ tr {
 .tablebox {
   display: flex;
   flex-direction: column;
+  line-height: 30px;
 
   .info_container {
     padding: 0;
     margin-top: 16px;
+
     .info {
       color: #bbbedb;
     }
