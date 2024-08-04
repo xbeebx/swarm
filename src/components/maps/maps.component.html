@@ -1,0 +1,169 @@
+<div class="article">
+  <!-- header -->
+  <div class="header">
+    <img class="header__image" src="assets/map.png" alt="Tier list" />
+    <span class="header__text">Maps</span>
+  </div>
+
+  <!-- overview-->
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Overview',
+        icon: 'ri-plane-fill',
+        subheaderAnimationDelay: 0
+      }
+    "
+  ></ng-container>
+
+  <div class="container-wrapper-vertical">
+    <div
+      class="mapbox overviewMap flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.1 + 's'
+      }"
+    >
+      <div class="mapElement">
+        <div class="mapElementImageContainer">
+          <img
+            [src]="mapService.getMapByName(THE_FINAL_CITY).icon"
+            [alt]="mapService.getMapByName(THE_FINAL_CITY).icon"
+          />
+        </div>
+        <div class="mapElement__desc">
+          <p class="mapElement__desc__name">
+            {{ mapService.getMapByName(THE_FINAL_CITY).name }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- parts-->
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Map parts',
+        icon: 'ri-picture-in-picture-fill',
+        subheaderAnimationDelay: 0.2
+      }
+    "
+  ></ng-container>
+
+  <ng-container
+    *ngTemplateOutlet="
+      template_textbox_with_items;
+      context: {
+        animationDelay: 0.3,
+        content: mapPartsIntro
+      }
+    "
+  ></ng-container>
+
+  <div class="container-wrapper-vertical">
+    <div
+      class="mapbox flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.4 + 's'
+      }"
+    >
+      @for (map of mapService.getMapsWithOutGlobal(); track map) {
+      <div class="mapElement">
+        <p class="mapElement__part">{{ map.part }}</p>
+        <img [src]="map.icon" [alt]="map.name" />
+        <div class="mapElement__desc">
+          <p class="mapElement__desc__name">{{ map.name }}</p>
+        </div>
+      </div>
+
+      }
+    </div>
+  </div>
+
+  <ng-container
+    *ngTemplateOutlet="
+      template_textbox_with_items;
+      context: {
+        animationDelay: 0.5,
+        content: mapPartsDesc
+      }
+    "
+  ></ng-container>
+</div>
+
+<!-- textbox with items -->
+<ng-template
+  #template_textbox_with_items
+  let-content="content"
+  let-animationDelay="animationDelay"
+>
+  <div
+    class="container-wrapper-vertical flyinAnimation"
+    [ngStyle]="{ 'animation-delay': animationDelay + 's' }"
+  >
+    <div class="box textbox">
+      <p>
+        @for (text of content.texts; track text; let i = $index) {
+        <ng-template #defaultText let-text>{{ text }}</ng-template>
+
+        <!-- normal text -->
+        @if(!matchRegex(text, '\\$\\d+')) {
+        <ng-container
+          *ngTemplateOutlet="
+            defaultText;
+            context: {
+              $implicit: text
+            }
+          "
+        ></ng-container>
+        }
+        <!-- item with image -->
+        @if(matchRegex(text, '\\$\\d+')) {
+        <ng-container
+          *ngTemplateOutlet="
+            template_item_with_image;
+            context: {
+              $implicit: content.items[+text.substring(1)]
+            }
+          "
+        ></ng-container>
+        } }
+      </p>
+    </div>
+  </div>
+</ng-template>
+
+<!-- item with image -->
+<ng-template #template_item_with_image let-item>
+  <a
+    class="item_with_image"
+    [attr.href]="item.link ? item.link : null"
+    [class.difficulty]="isDifficulty(item)"
+    [class.map]="isMap(item)"
+  >
+    @if(item.item.icon) {
+    <img [src]="item.item.icon" [alt]="item.item.name" />
+    }
+    <span>{{ item.item.name }}</span>
+  </a>
+</ng-template>
+
+<!-- subheader -->
+<ng-template
+  #template_subheader
+  let-text="text"
+  let-icon="icon"
+  let-subheaderAnimationDelay="subheaderAnimationDelay"
+>
+  <div
+    class="subheader flyinAnimation"
+    [ngStyle]="{
+      'animation-delay': subheaderAnimationDelay + 's'
+    }"
+  >
+    <i class="subheader__image" [ngClass]="icon"></i>
+    <span class="subheader__text">{{ text }}</span>
+  </div>
+</ng-template>

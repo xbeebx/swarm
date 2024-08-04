@@ -16,6 +16,7 @@ import { ChampionService } from '../../champion/champion.service';
 
 export const TIERLIST = 'Tier list';
 export const DIFFICULTIES = 'Difficulties';
+export const MAPS = 'Maps';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,11 @@ export class NavigationService {
       name: DIFFICULTIES,
       link: '/difficulties',
       icon: 'assets/difficulties.png',
+    },
+    {
+      name: MAPS,
+      link: '/maps',
+      icon: 'assets/map.png',
     },
     {
       name: JINX,
