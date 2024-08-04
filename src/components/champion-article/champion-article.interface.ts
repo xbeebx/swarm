@@ -4,10 +4,19 @@ import { Champion } from '../../champion/champion.interface';
 import { Difficulty } from '../../difficulty/difficuty.interface';
 import { Map } from '../../map/map.interface';
 import { Passive } from '../../passive/passive.interface';
+import { Upgrade } from '../../upgrade/upgrade.interface';
 import { Weapon } from '../../weapon/weapon.interface';
 
 export type Item = {
-  item: Weapon | Ability | Champion | Passive | Difficulty | Map | Boss;
+  item:
+    | Weapon
+    | Ability
+    | Champion
+    | Passive
+    | Difficulty
+    | Map
+    | Boss
+    | Upgrade;
   type:
     | 'weapon'
     | 'ability'
@@ -15,7 +24,8 @@ export type Item = {
     | 'passive'
     | 'difficulty'
     | 'map'
-    | 'boss';
+    | 'boss'
+    | 'upgrade';
   link?: string;
 };
 

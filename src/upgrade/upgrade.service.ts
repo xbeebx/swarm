@@ -76,7 +76,7 @@ export class UpgradeService {
     },
     {
       name: CRITICAL_CHANCE,
-      icon: UPGRADE_ASSETS_FOLDER + 'critial_chance.png',
+      icon: UPGRADE_ASSETS_FOLDER + 'critical_chance.png',
       increment: '+5%',
       maxLevel: 4,
     },
@@ -113,7 +113,7 @@ export class UpgradeService {
     {
       name: ANIMA_POWER,
       icon: UPGRADE_ASSETS_FOLDER + 'anima_power.png',
-      increment: '',
+      increment: 'See below',
       maxLevel: 100,
     },
   ];

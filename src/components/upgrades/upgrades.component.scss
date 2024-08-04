@@ -22,8 +22,31 @@ tr {
     color: #bbbedb;
     border-color: rgba(#bbbedb, 0.12);
 
+    .item_with_image {
+      display: flex;
+      align-items: center;
+    }
+
     &:first-child {
       color: #ff9900;
+    }
+  }
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  .listing {
+    color: #bbbedb;
+    padding-left: 20px;
+    line-height: 34px;
+
+    li::marker {
+      color: #ff9900;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 4px;
     }
   }
 }
@@ -32,10 +55,18 @@ tr {
   display: flex;
   flex-direction: column;
 
+  .info_container {
+    padding: 0;
+    margin-top: 16px;
+    .info {
+      color: #bbbedb;
+    }
+  }
+
   ul {
     color: #bbbedb;
     padding-left: 20px;
-    line-height: 34px;
+    line-height: 30px;
 
     li::marker {
       color: #ff9900;

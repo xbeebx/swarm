@@ -1,0 +1,207 @@
+<div class="article">
+  <!-- header -->
+  <div class="header">
+    <img class="header__image" src="assets/upgrades.png" alt="Upgrades" />
+    <span class="header__text">Upgrades</span>
+  </div>
+
+  <!-- modes -->
+  <ng-container
+    *ngTemplateOutlet="
+      template_subheader;
+      context: {
+        text: 'Stats',
+        icon: 'ri-bar-chart-fill',
+        subheaderAnimationDelay: 0
+      }
+    "
+  ></ng-container>
+
+  <div class="container-wrapper-vertical">
+    <div
+      class="box textbox flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.1 + 's'
+      }"
+    >
+      <p>
+        Some objectives rewards include unlocking upgrades, which grant the
+        player's fighter extra stats from the beginning of the level. The player
+        can purchase them from the menu of the same name in the main lobby.
+        Upgrades start at level zero and are purchased by spending gold, a
+        currency used exclusively for this purpose.<br /><br />
+        <i
+          >Gold earned during a round is kept <u>regardless</u> of victory or
+          defeat.</i
+        >
+      </p>
+      <ul class="listing">
+        <li>By destroying pods scattered around the map</li>
+        <li>By killing elite and mini-boss monsters</li>
+        <li>
+          By completing a primordian
+          <ng-container
+            *ngTemplateOutlet="
+              template_item_with_image;
+              context: {
+                $implicit: {
+                  item: belVeth,
+                  type: 'boss',
+                }
+              }
+            "
+          ></ng-container>
+          trial
+        </li>
+        <li>By completing certain Swarm lobby objectives</li>
+      </ul>
+    </div>
+    <div
+      class="box tablebox flyinAnimation"
+      [ngStyle]="{
+        'animation-delay': 0.2 + 's'
+      }"
+    >
+      <!-- table -->
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="Upgrade">
+          <th mat-header-cell *matHeaderCellDef>Upgrade</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container
+              *ngTemplateOutlet="
+              template_item_with_image;
+              context: {
+                $implicit: {
+                  item: element,
+                  type: 'upgrade',
+                }
+              }
+            "
+            ></ng-container>
+            <!-- {{ element.name }} -->
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Increment">
+          <th mat-header-cell *matHeaderCellDef>Increment</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.increment }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Max level">
+          <th mat-header-cell *matHeaderCellDef>Max level</th>
+          <td mat-cell *matCellDef="let element">{{ element.maxLevel }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <div class="box tablebox info_container">
+        <div class="info">
+          <ng-container
+            *ngTemplateOutlet="
+          template_item_with_image;
+          context: {
+            $implicit: {
+              item: animaPower,
+              type: 'upgrade',
+            }
+          }
+        "
+          ></ng-container>
+          is an attribute that grants the following stats combined for each
+          level:
+          <ul class="listing">
+            <li>
+              <ng-container
+                *ngTemplateOutlet="
+                template_item_with_image;
+                context: {
+                  $implicit: {
+                    item: {icon: abilityHaste.icon, name: '+1 Ability Haste'},
+                    type: 'upgrade',
+                  }
+                }
+              "
+              ></ng-container>
+            </li>
+            <li>
+              <ng-container
+                *ngTemplateOutlet="
+              template_item_with_image;
+              context: {
+                $implicit: {
+                  item: {icon: damage.icon, name: '+1% Damage'},
+                  type: 'upgrade',
+                }
+              }
+            "
+              ></ng-container>
+            </li>
+            <li>
+              <ng-container
+                *ngTemplateOutlet="
+            template_item_with_image;
+            context: {
+              $implicit: {
+                item: {icon: movementSpeed.icon, name: '+1% Movement Speed'},
+                type: 'upgrade',
+              }
+            }
+          "
+              ></ng-container>
+            </li>
+            <li>
+              <ng-container
+                *ngTemplateOutlet="
+          template_item_with_image;
+          context: {
+            $implicit: {
+              item: {icon: pickupRadius.icon, name: '+1% Pickup Radius'},
+              type: 'upgrade',
+            }
+          }
+        "
+              ></ng-container>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- subheader -->
+<ng-template
+  #template_subheader
+  let-text="text"
+  let-icon="icon"
+  let-subheaderAnimationDelay="subheaderAnimationDelay"
+>
+  <div
+    class="subheader flyinAnimation"
+    [ngStyle]="{
+      'animation-delay': subheaderAnimationDelay + 's'
+    }"
+  >
+    <i class="subheader__image" [ngClass]="icon"></i>
+    <span class="subheader__text">{{ text }}</span>
+  </div>
+</ng-template>
+
+<!-- item with image -->
+<ng-template #template_item_with_image let-item>
+  <a
+    class="item_with_image"
+    [attr.href]="item.link ? item.link : null"
+    [class.image_round_with_border]="isBoss(item)"
+    [class.upgrade]="isUpgrade(item)"
+    [class.boss]="isBoss(item)"
+  >
+    <img [src]="item.item.icon" [alt]="item.item.name" /><span>{{
+      item.item.name
+    }}</span>
+  </a>
+</ng-template>
