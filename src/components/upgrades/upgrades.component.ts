@@ -14,6 +14,7 @@ import {
   MOVEMENT_SPEED,
   PICKUP_RADIUS,
 } from '../../upgrade/upgrade.interface';
+import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'swarm-upgrades',
@@ -25,6 +26,8 @@ import {
     NgClass,
     NgTemplateOutlet,
     MatTableModule,
+    MatSort,
+    MatSortHeader,
   ],
   templateUrl: './upgrades.component.html',
   styleUrl: './upgrades.component.scss',
@@ -41,13 +44,42 @@ export class UpgradesComponent {
 
   belVeth = this.bossService.getBossByName(BELVETH);
 
+  data = this.upgradeService
+    .getUpgrades()
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  sortedData = this.data;
   displayedColumns: string[] = ['Upgrade', 'Increment', 'Max level'];
-  dataSource = this.upgradeService.getUpgrades();
+  dataSource = this.sortedData;
 
   isBoss = (item: Item) => {
     return item.type === 'boss';
   };
   isUpgrade = (item: Item) => {
     return item.type === 'upgrade';
+  };
+
+  sortData(sort: Sort) {
+    const data = this.data.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+    } else {
+      this.sortedData = data.sort((a, b) => {
+        const isAsc = sort.direction === 'asc';
+
+        switch (sort.active) {
+          case 'Upgrade':
+            return this.compare(a.name, b.name, isAsc);
+          default:
+            return 0;
+        }
+      });
+    }
+
+    this.dataSource = this.sortedData;
+  }
+
+  compare = (a: number | string, b: number | string, isAsc: boolean) => {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   };
 }

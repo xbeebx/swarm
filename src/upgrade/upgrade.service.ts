@@ -113,7 +113,7 @@ export class UpgradeService {
     {
       name: ANIMA_POWER,
       icon: UPGRADE_ASSETS_FOLDER + 'anima_power.png',
-      increment: 'See below',
+      increment: 'See below table',
       maxLevel: 100,
     },
   ];
