@@ -12,21 +12,29 @@ import { AuroraComponent } from './components/aurora.component';
 import { DifficultiesComponent } from './components/difficulties/difficulties.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { UpgradesComponent } from './components/upgrades/upgrades.component';
+import { ChampionsComponent } from './components/champions/champions.component';
 
 export const routes: Routes = [
   { path: 'tierlist', component: TierlistComponent },
   { path: 'difficulties', component: DifficultiesComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'upgrades', component: UpgradesComponent },
-  { path: 'jinx', component: JinxComponent },
-  { path: 'seraphine', component: SeraphineComponent },
-  { path: 'illaoi', component: IllaoiComponent },
-  { path: 'leona', component: LeonaComponent },
-  { path: 'yasuo', component: YasuoComponent },
-  { path: 'riven', component: RivenComponent },
-  { path: 'xayah', component: XayahComponent },
-  { path: 'briar', component: BriarComponent },
-  { path: 'aurora', component: AuroraComponent },
+  {
+    path: 'champions',
+    component: ChampionsComponent,
+    children: [
+      { path: 'jinx', component: JinxComponent },
+      { path: 'seraphine', component: SeraphineComponent },
+      { path: 'illaoi', component: IllaoiComponent },
+      { path: 'leona', component: LeonaComponent },
+      { path: 'yasuo', component: YasuoComponent },
+      { path: 'riven', component: RivenComponent },
+      { path: 'xayah', component: XayahComponent },
+      { path: 'briar', component: BriarComponent },
+      { path: 'aurora', component: AuroraComponent },
+    ],
+  },
+
   { path: '', redirectTo: '/tierlist', pathMatch: 'full' },
   { path: '**', redirectTo: '/tierlist', pathMatch: 'full' },
 ];

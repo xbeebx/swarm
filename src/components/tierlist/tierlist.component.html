@@ -1,7 +1,7 @@
 <div class="article">
   <!-- header -->
   <div class="header">
-    <img class="header__image" src="assets/tierlist.png" alt="Tier list" />
+    <div class="header__image" [ngClass]="tierlistNavigation.icon"></div>
     <span class="header__text">Tier list</span>
   </div>
 
@@ -27,7 +27,7 @@
         potential.
         <a
           class="item_with_image image_round_with_border champion"
-          [href]="navigationService.getItemByName(briar.name).link"
+          [href]="championNavigationService.getItemByName(briar.name).link"
         >
           <img [src]="briar.icon" [alt]="briar.name" /><span
             >{{ briar.name }}
@@ -35,7 +35,7 @@
         >,
         <a
           class="item_with_image image_round_with_border champion"
-          [href]="navigationService.getItemByName(leona.name).link"
+          [href]="championNavigationService.getItemByName(leona.name).link"
         >
           <img [src]="leona.icon" [alt]="leona.name" /><span
             >{{ leona.name }}
@@ -44,7 +44,7 @@
         and
         <a
           class="item_with_image image_round_with_border champion"
-          [href]="navigationService.getItemByName(jinx.name).link"
+          [href]="championNavigationService.getItemByName(jinx.name).link"
         >
           <img [src]="jinx.icon" [alt]="jinx.name" /><span
             >{{ jinx.name }}
@@ -72,7 +72,7 @@
         @for (champ of championService.getChampionsByTier(tier.name); track
         champ) {
         <div class="tierlist__container__content__item">
-          <a [href]="navigationService.getItemByName(champ.name).link">
+          <a [href]="championNavigationService.getItemByName(champ.name).link">
             <img
               [src]="champ.icon"
               [alt]="champ.name"

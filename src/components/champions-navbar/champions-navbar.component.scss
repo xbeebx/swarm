@@ -1,0 +1,77 @@
+.champions-navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+
+  max-width: 1030px;
+  margin: 0 auto;
+  background-color: #0d0d28;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      flex-grow: 1;
+      font-size: 18px;
+      padding: 14px;
+      gap: 12px;
+
+      &.selected {
+        background: rgb(7 7 32);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: rgb(25 25 55);
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 2px solid #070720;
+        transition: border-color 0.1s ease-out;
+
+        &.selected {
+          border-color: #ff9900;
+        }
+      }
+
+      span {
+        flex-grow: 1;
+        user-select: none;
+        align-content: center;
+        transition: color 0.1s ease-out;
+
+        &.selected {
+          color: #ff9900;
+        }
+      }
+    }
+    &__selectedIndicator {
+      flex-grow: 0;
+      width: 0%;
+      background-color: #ff9900;
+      transition: width 0.1s ease-out;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+
+      &.selected {
+        width: 100%;
+      }
+    }
+  }
+}

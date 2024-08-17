@@ -1,23 +1,23 @@
-<div class="navbar__container">
-  @for (item of navigationService.getItems(); track item) {
+<div class="champions-navbar">
+  @for (item of championNavigationService.getItems(); track item) {
   <div
-    class="navbar__container__wrapper"
+    class="champions-navbar__wrapper"
     (click)="this.navigate(item.link)"
     [class.selected]="this.isSelected(item.link)"
     tabindex="0"
     role="button"
     (keyup)="onKeyUp($event, item.link)"
   >
-    <div class="navbar__container__wrapper__item">
-      <div
-        class="navbar__container__wrapper__item__image"
-        [ngClass]="item.icon"
+    <div class="champions-navbar__wrapper__item">
+      <img
+        [src]="item.icon"
+        [alt]="item.name"
         [class.selected]="this.isSelected(item.link)"
-      ></div>
+      />
       <span [class.selected]="this.isSelected(item.link)">{{ item.name }}</span>
     </div>
     <div
-      class="navbar__container__wrapper__selectedIndicator"
+      class="champions-navbar__wrapper__selectedIndicator"
       [class.selected]="this.isSelected(item.link)"
     ></div>
   </div>

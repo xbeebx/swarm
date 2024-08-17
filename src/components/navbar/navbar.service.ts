@@ -1,91 +1,38 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { NavbarItem } from './navbar.item.interface';
-import {
-  AURORA,
-  BRIAR,
-  ILLAOI,
-  JINX,
-  LEONA,
-  RIVEN,
-  SERAPHINE,
-  XAYAH,
-  YASUO,
-} from '../../champion/champion.interface';
-import { ChampionService } from '../../champion/champion.service';
 
 export const TIERLIST = 'Tier list';
 export const DIFFICULTIES = 'Difficulties';
 export const MAPS = 'Maps';
 export const UPGRADES = 'Upgrades';
+export const CHAMPIONS = 'Champions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavigationService {
-  #championService = inject(ChampionService);
-
   #items: NavbarItem[] = [
-    { name: TIERLIST, link: '/tierlist', icon: 'assets/tierlist.png' },
+    { name: TIERLIST, link: '/tierlist', icon: 'ri-tent-fill' },
+    {
+      name: CHAMPIONS,
+      link: '/champions',
+      icon: 'ri-team-fill',
+    },
     {
       name: DIFFICULTIES,
       link: '/difficulties',
-      icon: 'assets/difficulties.png',
+      icon: 'ri-stack-fill',
     },
     {
       name: MAPS,
       link: '/maps',
-      icon: 'assets/map.png',
+      icon: 'ri-earth-fill',
     },
     {
       name: UPGRADES,
       link: '/upgrades',
-      icon: 'assets/upgrades.png',
-    },
-    {
-      name: JINX,
-      link: '/jinx',
-      icon: this.#championService.getChampionByName(JINX).icon,
-    },
-    {
-      name: SERAPHINE,
-      link: '/seraphine',
-      icon: this.#championService.getChampionByName(SERAPHINE).icon,
-    },
-    {
-      name: ILLAOI,
-      link: '/illaoi',
-      icon: this.#championService.getChampionByName(ILLAOI).icon,
-    },
-    {
-      name: LEONA,
-      link: '/leona',
-      icon: this.#championService.getChampionByName(LEONA).icon,
-    },
-    {
-      name: YASUO,
-      link: '/yasuo',
-      icon: this.#championService.getChampionByName(YASUO).icon,
-    },
-    {
-      name: RIVEN,
-      link: '/riven',
-      icon: this.#championService.getChampionByName(RIVEN).icon,
-    },
-    {
-      name: XAYAH,
-      link: '/xayah',
-      icon: this.#championService.getChampionByName(XAYAH).icon,
-    },
-    {
-      name: BRIAR,
-      link: '/briar',
-      icon: this.#championService.getChampionByName(BRIAR).icon,
-    },
-    {
-      name: AURORA,
-      link: '/aurora',
-      icon: this.#championService.getChampionByName(AURORA).icon,
+      icon: 'ri-arrow-up-double-fill',
     },
   ];
 

@@ -10,11 +10,11 @@ import { PassiveService } from '../../passive/passive.service';
 import { UpgradeService } from '../../upgrade/upgrade.service';
 import { WeaponService } from '../../weapon/weapon.service';
 import { Item, TextsWithItems } from './champion-article.interface';
-import { NavigationService } from '../navbar/navbar.service';
 import { AbilityService } from '../../ability/ability.service';
 import { DifficultyService } from '../../difficulty/difficulty.service';
 import { MapService } from '../../map/map.service';
 import { BossService } from '../../boss/boss.service';
+import { ChampionNavigationService } from '../champions-navbar/champions-navbar.service';
 
 @Component({
   selector: 'swarm-champion-article',
@@ -31,7 +31,7 @@ export abstract class ChampionArticleComponent {
   weaponService = inject(WeaponService);
   upgradeService = inject(UpgradeService);
   passiveService = inject(PassiveService);
-  navigationService = inject(NavigationService);
+  championNavigationService = inject(ChampionNavigationService);
   abilityService = inject(AbilityService);
   difficultyService = inject(DifficultyService);
   mapService = inject(MapService);

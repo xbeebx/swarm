@@ -1,19 +1,18 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-
-import { NavigationService } from './navbar.service';
+import { ChampionNavigationService } from './champions-navbar.service';
 
 @Component({
-  selector: 'swarm-navbar',
+  selector: 'swarm-champions-navbar',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgIf, NgClass],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+  imports: [RouterOutlet, NgFor],
+  templateUrl: './champions-navbar.component.html',
+  styleUrl: './champions-navbar.component.scss',
 })
-export class NavbarComponent {
+export class ChampionsNavbarComponent {
   #router = inject(Router);
-  navigationService = inject(NavigationService);
+  championNavigationService = inject(ChampionNavigationService);
 
   navigate = (link: string) => {
     this.#router.navigate([link]);

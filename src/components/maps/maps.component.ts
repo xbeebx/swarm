@@ -16,6 +16,7 @@ import {
 } from '../champion-article/champion-article.interface';
 import { DifficultyService } from '../../difficulty/difficulty.service';
 import { HARD, STORY } from '../../difficulty/difficuty.interface';
+import { NavigationService, MAPS as NAV_MAPS } from '../navbar/navbar.service';
 
 const ELEMENT_DATA = MAPS.filter((e) => e !== THE_FINAL_CITY);
 
@@ -36,7 +37,10 @@ const ELEMENT_DATA = MAPS.filter((e) => e !== THE_FINAL_CITY);
 })
 export class MapsComponent {
   mapService = inject(MapService);
+  navigationService = inject(NavigationService);
   difficultyService = inject(DifficultyService);
+
+  mapsNavigation = this.navigationService.getItemByName(NAV_MAPS);
 
   THE_FINAL_CITY: MapTypes = THE_FINAL_CITY;
 

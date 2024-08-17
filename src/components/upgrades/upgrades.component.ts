@@ -6,7 +6,7 @@ import { UpgradeService } from '../../upgrade/upgrade.service';
 import { BossService } from '../../boss/boss.service';
 import { BELVETH } from '../../boss/boss.interface';
 import { Item } from '../champion-article/champion-article.interface';
-import { NavigationService } from '../navbar/navbar.service';
+import { NavigationService, UPGRADES } from '../navbar/navbar.service';
 import {
   ABILITY_HASTE,
   ANIMA_POWER,
@@ -34,7 +34,10 @@ import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 })
 export class UpgradesComponent {
   upgradeService = inject(UpgradeService);
+  navigationService = inject(NavigationService);
   bossService = inject(BossService);
+
+  upgradesNavigation = this.navigationService.getItemByName(UPGRADES);
 
   abilityHaste = this.upgradeService.getUpgradeByName(ABILITY_HASTE);
   damage = this.upgradeService.getUpgradeByName(DAMAGE);

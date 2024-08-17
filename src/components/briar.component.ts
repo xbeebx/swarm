@@ -62,12 +62,12 @@ export class BriarComponent extends ChampionArticleComponent {
       {
         item: this.championService.getChampionByName(JINX),
         type: 'champion',
-        link: this.navigationService.getItemByName(JINX).link,
+        link: this.championNavigationService.getItemByName(JINX).link,
       } as Item,
       {
         item: this.championService.getChampionByName(LEONA),
         type: 'champion',
-        link: this.navigationService.getItemByName(LEONA).link,
+        link: this.championNavigationService.getItemByName(LEONA).link,
       } as Item,
     ],
   };

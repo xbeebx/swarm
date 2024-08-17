@@ -46,7 +46,7 @@ export class YasuoComponent extends ChampionArticleComponent {
       {
         item: this.championService.getChampionByName(BRIAR),
         type: 'champion',
-        link: this.navigationService.getItemByName(BRIAR).link,
+        link: this.championNavigationService.getItemByName(BRIAR).link,
       } as Item,
     ],
   };

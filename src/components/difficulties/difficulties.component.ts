@@ -10,6 +10,7 @@ import {
   STORY,
 } from '../../difficulty/difficuty.interface';
 import { TooltipDirective } from '../tooltip.directive';
+import { DIFFICULTIES, NavigationService } from '../navbar/navbar.service';
 
 export interface DifficultyElement {
   name: string;
@@ -56,7 +57,10 @@ const ELEMENT_DATA: DifficultyElement[] = [
   styleUrl: './difficulties.component.scss',
 })
 export class DifficultiesComponent {
+  navigationService = inject(NavigationService);
   difficultService = inject(DifficultyService);
+
+  difficultiesNavigation = this.navigationService.getItemByName(DIFFICULTIES);
 
   // make the difficulties available in the html
   STORY: DifficultyTypes = STORY;
