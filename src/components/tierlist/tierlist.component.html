@@ -28,6 +28,12 @@
         <a
           class="item_with_image image_round_with_border champion"
           [href]="championNavigationService.getItemByName(briar.name).link"
+          (click)="
+            this.navigate(
+              championNavigationService.getItemByName(briar.name).link,
+              $event
+            )
+          "
         >
           <img [src]="briar.icon" [alt]="briar.name" /><span
             >{{ briar.name }}
@@ -36,6 +42,12 @@
         <a
           class="item_with_image image_round_with_border champion"
           [href]="championNavigationService.getItemByName(leona.name).link"
+          (click)="
+            this.navigate(
+              championNavigationService.getItemByName(leona.name).link,
+              $event
+            )
+          "
         >
           <img [src]="leona.icon" [alt]="leona.name" /><span
             >{{ leona.name }}
@@ -45,6 +57,12 @@
         <a
           class="item_with_image image_round_with_border champion"
           [href]="championNavigationService.getItemByName(jinx.name).link"
+          (click)="
+            this.navigate(
+              championNavigationService.getItemByName(jinx.name).link,
+              $event
+            )
+          "
         >
           <img [src]="jinx.icon" [alt]="jinx.name" /><span
             >{{ jinx.name }}
@@ -72,7 +90,15 @@
         @for (champ of championService.getChampionsByTier(tier.name); track
         champ) {
         <div class="tierlist__container__content__item">
-          <a [href]="championNavigationService.getItemByName(champ.name).link">
+          <a
+            [href]="championNavigationService.getItemByName(champ.name).link"
+            (click)="
+              this.navigate(
+                championNavigationService.getItemByName(champ.name).link,
+                $event
+              )
+            "
+          >
             <img
               [src]="champ.icon"
               [alt]="champ.name"

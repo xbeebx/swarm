@@ -15,6 +15,7 @@ import { DifficultyService } from '../../difficulty/difficulty.service';
 import { MapService } from '../../map/map.service';
 import { BossService } from '../../boss/boss.service';
 import { ChampionNavigationService } from '../champions-navbar/champions-navbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'swarm-champion-article',
@@ -25,6 +26,7 @@ import { ChampionNavigationService } from '../champions-navbar/champions-navbar.
   encapsulation: ViewEncapsulation.None,
 })
 export abstract class ChampionArticleComponent {
+  router = inject(Router);
   championService = inject(ChampionService);
   itemBuildService = inject(ItemBuildService);
   augmentService = inject(AugmentService);
@@ -52,6 +54,11 @@ export abstract class ChampionArticleComponent {
   };
   augments: Augment[] = [];
   abstract itemBuilds: ItemBuild[];
+
+  navigate = (link: string, event: MouseEvent) => {
+    event.preventDefault();
+    this.router.navigate([link]);
+  };
 
   calcTipDelay = () => {
     return 0;

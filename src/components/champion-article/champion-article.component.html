@@ -80,6 +80,7 @@
     <a
       class="item_with_image"
       [attr.href]="item.link ? item.link : null"
+      (click)="item.link ? navigate(item.link, $event) : null"
       [class.image_round_with_border]="
         isWeapon(item) ||
         isAbility(item) ||

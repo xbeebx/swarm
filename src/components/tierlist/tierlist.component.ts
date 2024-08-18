@@ -1,6 +1,6 @@
 import { NgClass, NgFor, NgStyle, NgTemplateOutlet } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { BRIAR, JINX, LEONA } from '../../champion/champion.interface';
 import { ChampionService } from '../../champion/champion.service';
 import { TierService } from '../../tier/tier.service';
@@ -16,6 +16,7 @@ import { ChampionNavigationService } from '../champions-navbar/champions-navbar.
   styleUrl: './tierlist.component.scss',
 })
 export class TierlistComponent {
+  #router = inject(Router);
   tierService = inject(TierService);
   navigationService = inject(NavigationService);
   championNavigationService = inject(ChampionNavigationService);
@@ -27,4 +28,9 @@ export class TierlistComponent {
   briar = this.championService.getChampionByName(BRIAR);
   leona = this.championService.getChampionByName(LEONA);
   jinx = this.championService.getChampionByName(JINX);
+
+  navigate = (link: string, event: MouseEvent) => {
+    event.preventDefault();
+    this.#router.navigate([link]);
+  };
 }
